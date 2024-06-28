@@ -1,0 +1,164 @@
+.content{
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 16.7vw;
+        left: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        background-image: url('../images/payment.svg');
+    }
+}
+.payment_inner{
+    padding: 48px 0 114px;
+    .page_title{
+        text-align: center;
+    }
+    .form_block{
+        background: $white;
+        border: 1px solid $footerBorder;
+        box-sizing: border-box;
+        box-shadow: 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        max-width: 450px;
+        margin: 48px auto 0;
+        padding: 48px 40px 32px;
+    }
+    .form_title{
+        font-family: $bold;
+        font-size: 240%;
+        line-height: 1.25em;
+        color: $gray4D;
+    }
+    form{
+        padding-top: 48px;
+    }
+    .field_title{
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-bottom: 8px;
+    }
+    input{
+        border: 1px solid $gray66;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-size: 140%;
+        line-height: 18px;
+        color: $gray99;
+        background: transparent;
+        padding: 12px 36px 12px 16px;
+    }
+    button{
+        border-radius: 8px;
+        background: $siteColor;
+        color: $white;
+        border: none;
+        font-size: 160%;
+        line-height: 19px;
+        text-align: center;
+        padding: 18px;
+        margin-top: 32px;
+        width: 100%;
+        @include buttonHover();
+    }
+    .bottom_block{
+        margin-top: 24px;
+        padding-top: 24px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -40px;
+            right: -40px;
+            height: 1px;
+            background: $footerBorder;
+        }
+        a{
+            display: inline-block;
+            font-size: 140%;
+            line-height: 1.25em;
+            text-align: center;
+            text-decoration-line: underline;
+            color: $siteColor;
+            @include siteColorAlfaHover();
+        }
+    }
+}
+@include mediaTo($size1200){
+    .payment_inner{
+        padding: 40px 0 100px;
+        .form_block{
+            margin-top: 40px;
+        }
+        form{
+            padding-top: 40px;
+        }
+    }
+}
+@include mediaTo($size960){
+    .payment_inner{
+        padding: 40px 0 80px;
+        .form_block{
+            margin-top: 30px;
+        }
+        form{
+            padding-top: 30px;
+        }
+    } 
+}
+@include mediaTo($size480){
+    .payment_inner{
+        padding: 30px 0 60px;
+        .form_block{
+            padding: 30px 20px;
+            max-width: 100%;
+        }
+        .form_title{
+            font-size: 200%;
+        }
+        .bottom_block{
+            &:before{
+                left: -20px;
+                right: -20px;
+            }
+        }
+        button{
+            margin-top: 24px;
+        }
+    }
+}
+@include mediaTo($size400){
+    .payment_inner{
+        padding: 30px 0 50px;
+        .form_title{
+            font-size: 180%;
+        }
+        .field_title{
+            font-size: 130%;
+        }
+        .form_block{
+            padding: 20px 12px;
+        }
+        .bottom_block{
+            &:before{
+                left: -12px;
+                right: -12px;
+            }
+        }
+        button{
+            margin-top: 24px;
+            font-size: 140%;
+            line-height: 18px;
+            padding: 14px;
+        }
+    }
+}

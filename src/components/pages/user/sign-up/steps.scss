@@ -1,0 +1,75 @@
+@import "../../../../assets/sass/imports/main/variables";
+@import "../../../../assets/sass/imports/main/mixins";
+.reg-step-2 {
+    .time_code {
+        margin-bottom: auto;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 140%;
+        line-height: 1.25em;
+        text-align: center;
+        text-decoration-line: underline;
+        color: #4d4d4d;
+        padding-top: 24px;
+    }
+
+    .field_block {
+        width: 100%;
+        padding: unset !important;
+        flex: unset !important;
+        max-width: 100% !important;
+    }
+
+    .code_input {
+        display: flex;
+        justify-content: center;
+        width: 100% !important;
+
+        .react-code-input {
+            input {
+                height: 68px !important;
+                border: 1px solid #e9e4f7 !important;
+                width: 100% !important;
+                max-width: 20.6%;
+                flex: 0 0 20.6%;
+                margin: 0 8px;
+                border-radius: 8px;
+            }
+            @include mediaTo($size480) {
+              padding: 15px 0 0;
+              input{
+                height: 68px !important;
+                width: 68px !important;
+                padding: 10px;
+              }
+            }
+            @include mediaTo($size400) {
+              input{
+                height: 60px !important;
+                width: 60px !important;
+                padding: 5px;
+                margin: 0px 5px;
+              }
+            }
+            @include mediaTo($size360) {
+              input{
+                height: 55px !important;
+                width: 55px !important;
+              }
+            }
+        }
+    }
+}
+.step-3 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    > span {
+        display: flex;
+        flex: 1;
+    }
+
+    .form_description {
+        padding-top: 8px;
+    }
+}

@@ -1,0 +1,1101 @@
+@import "../../assets/sass/imports/main/variables";
+@import "../../assets/sass/imports/main/mixins";
+@import "../../assets/sass/imports/main/extendsStart";
+@import "../../assets/sass/imports/personal/personalGeneral";
+body.popup_opened {
+    overflow: hidden;
+    .change_fcoin {
+        top: 0;
+    }
+}
+.f_page {
+    .fcoin_buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 24px;
+        .fcoin_story {
+            display: flex;
+            align-items: center;
+            font-size: 140%;
+            line-height: 1.25em;
+            background: linear-gradient(223.93deg, #fc0a88 8.61%, #4c17d0 85.74%);
+            box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+            border-radius: 16px;
+            padding: 12px 24px;
+            color: $white;
+            @include opacityHover();
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 10px;
+                background: $white;
+                color: $siteColor;
+                width: 28px;
+                height: 28px;
+                min-width: 28px;
+                border-radius: 50%;
+                &:before {
+                    transform: rotate(-45deg);
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @include mediaTo($size768) {
+        .fcoin_buttons {
+            justify-content: space-between;
+            .menu_block {
+                margin: 0 20px 0 0;
+            }
+        }
+    }
+
+    @include mediaTo($size480) {
+        .fcoin_buttons .fcoin_story {
+            font-size: 130%;
+            padding: 10px 16px;
+        }
+    }
+    @include mediaTo($size400) {
+        .fcoin_buttons {
+            flex-direction: column;
+            align-items: flex-start;
+            .menu_block {
+                margin: 0 0 20px;
+            }
+            .fcoin_story {
+                padding: 12px 24px;
+            }
+        }
+    }
+}
+.fcoin_page {
+    .icon_checked {
+        color: rgb(70, 192, 70);
+    }
+
+    .change_fcoin {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        z-index: 2000;
+        background: rgba($gray99, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include animStyle(top 0.5s);
+    }
+    .change_inner {
+        background: $white;
+        border: 1px solid $footerBorder;
+        box-sizing: border-box;
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        padding: 52px 40px 32px;
+        position: relative;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include customScroll(3px, auto, 3px, 20px, 20px, rgba($siteColor, 0.1), $siteColor);
+        .close_btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            color: $gray99;
+            border: none;
+            background: transparent;
+            font-size: 160%;
+            @include siteColorAlfaHover();
+        }
+        .buttons_row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: 12px;
+            button {
+                font-size: 160%;
+                line-height: 20px;
+                text-align: center;
+                border: none;
+            }
+            .cancel_btn {
+                color: $siteColor;
+                background: transparent;
+                margin-right: 48px;
+                @include siteColorAlfaHover();
+            }
+            .change_btn {
+                background: $siteColor;
+                border-radius: 8px;
+                padding: 17px;
+                min-width: 203px;
+                color: $white;
+                @include siteBgAlfaHover();
+            }
+        }
+        .change_title {
+            padding-bottom: 20px;
+            font-size: 240%;
+            line-height: 1.42em;
+            color: $gray4D;
+            span {
+                color: $siteColor;
+                display: inline-block;
+            }
+        }
+        .success_title {
+            color: $successColor;
+            text-align: center;
+            padding-bottom: 0;
+        }
+        .main_icon {
+            display: block;
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            font-size: 240%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid $successColor;
+            color: $successColor;
+            border-radius: 16px;
+            margin: 0 auto 21px;
+        }
+        .field_block {
+            padding-top: 20px;
+        }
+        .field_title {
+            font-size: 140%;
+            line-height: 1.25em;
+            padding-bottom: 8px;
+            color: $gray4D;
+        }
+        input {
+            background: $white;
+            border: 1px solid $footerBorder;
+            border-radius: 8px;
+            font-size: 140%;
+            line-height: 18px;
+            padding: 13px 16px;
+            color: $gray99;
+        }
+        .change_description {
+            font-size: 140%;
+            line-height: 1.42em;
+            color: $gray4D;
+            padding-bottom: 12px;
+        }
+        .active_btn {
+            font-size: 160%;
+            line-height: 20px;
+            text-align: center;
+            margin: 32px 0 0 auto;
+            min-width: 268px;
+            border: none;
+            background: $siteColor;
+            border-radius: 8px;
+            padding: 17px;
+            color: $white;
+            @include siteBgAlfaHover();
+        }
+    }
+    .fcoin_section {
+        display: flex;
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        .service_title {
+            padding-bottom: 0 !important;
+        }
+    }
+    .left_side {
+        max-width: 37.5%;
+        flex: 0 0 37.5%;
+        box-shadow: 0px 2px 14px rgba($siteColor, 0.03);
+        .fcoin_block {
+            width: 100%;
+        }
+        .fcoin_inner {
+            padding: 48px 40px 23px;
+            .field_row {
+                display: flex;
+                margin: 0 -8px;
+                padding-top: 16px;
+                > div {
+                    padding: 0 8px;
+                    max-width: 50%;
+                    flex: 0 0 50%;
+                    div {
+                        background: $white;
+                        border: 1px solid $footerBorder;
+                        box-sizing: border-box;
+                        border-radius: 16px;
+                        padding: 19px 12px 15px;
+                    }
+                }
+                span {
+                    font-size: 120%;
+                    line-height: 1.25em;
+                    color: $gray66;
+                    text-align: center;
+                    display: block;
+                    &:first-child {
+                        color: $gray4D;
+                        font-size: 140%;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+        .fcoin_bottom {
+            margin-top: 53px;
+            padding-top: 24px;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                left: -40px;
+                right: -40px;
+                top: 0;
+                height: 1px;
+                background: $footerBorder;
+            }
+            .bottom_title {
+                font-size: 120%;
+                line-height: 1.25em;
+                color: $gray4D;
+                padding-bottom: 12px;
+            }
+            .copy_from {
+                background: rgba($siteColor, 0.1);
+                border-radius: 8px;
+                font-size: 140%;
+                line-height: 18px;
+                padding: 12px 22px 12px 14px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $siteColor;
+                position: relative;
+                span {
+                    display: block;
+                    @include textOverflow(1, relative);
+                }
+            }
+            button {
+                border: none;
+                background: transparent;
+                font-size: 130%;
+                padding: 0;
+                margin-left: 10px;
+            }
+        }
+        .coin_quantity {
+            background: $white;
+            border: 1px solid $footerBorder;
+            box-sizing: border-box;
+            border-radius: 16px;
+            padding: 29px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: $bold;
+            font-size: 320%;
+            line-height: 1.25em;
+            color: $siteColor;
+            margin-top: 24px;
+            span {
+                display: block;
+                font-size: 37.5%;
+                line-height: 1.25em;
+                font-family: $regular;
+                color: $gray4D;
+                padding-left: 10px;
+            }
+        }
+    }
+    .right_side {
+        max-width: 62.5%;
+        flex: 0 0 62.5%;
+        .right_inner {
+            padding: 48px 40px 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .tab_buttons ul {
+            @include customScroll(auto, 3px, 3px, 60px, 60px, rgba($siteColor, 0.1), rgba($siteColor, 1));
+        }
+    }
+    .tab_buttons {
+        padding-top: 24px;
+        display: flex;
+        justify-content: flex-start;
+        ul {
+            @extend %standardList;
+            background: linear-gradient(154.02deg, rgba($white, 0.8) 0%, rgba($white, 0.5) 100%);
+            border: 1px solid rgba($siteColor, 0.1);
+            box-sizing: border-box;
+            border-radius: 16px;
+            display: flex;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            font-size: 120%;
+            height: 100%;
+            line-height: 1.25em;
+            text-align: center;
+            color: $gray4D;
+            padding: 10px 16px;
+            @include siteColorAlfaHover();
+            &.selected {
+                box-shadow: 0px 1px 4px rgba($siteColor, 0.15);
+                border-radius: 15px 16px 16px 15px;
+                color: $siteColor;
+            }
+        }
+    }
+    .tabs_container {
+        flex: 1;
+        padding: 20px 0;
+        .tab_block {
+            height: 0;
+            opacity: 0;
+            @include overHidden();
+            &.selected {
+                overflow: visible;
+                height: 100%;
+                opacity: 1;
+            }
+        }
+    }
+    .invited_friends {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .overall_row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray4D;
+        font-family: $medium;
+        padding-bottom: 16px;
+        .overall_coins {
+            padding-left: 20px;
+            text-align: right;
+        }
+    }
+    .friends_list {
+        flex: 1;
+        height: 60%;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 260px;
+        margin-right: -20px;
+        @include customScroll(6px, auto, 6px, 2px, 2px, rgba($siteColor, 0.1), $siteColor);
+        ul {
+            @extend %standardList;
+            margin-right: 20px;
+        }
+        li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            font-size: 120%;
+            line-height: 1.25em;
+            border-top: 1px solid $footerBorder;
+        }
+        .name_block {
+            flex: 1;
+            width: 50%;
+            color: $gray4D;
+        }
+        .status_block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            min-width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            margin-left: 18px;
+            font-size: 70%;
+            &.checked {
+                border: 1px solid $successColor;
+                color: $successColor;
+            }
+            &.error {
+                border: 1px solid $offColor;
+                color: $offColor;
+            }
+            &.processing {
+                border: 1px solid $procColor;
+                color: $procColor;
+                font-size: 100%;
+            }
+            &.failed {
+                border-radius: 50%;
+                font-size: 170%;
+            }
+        }
+        .coins_block {
+            color: $gray4D;
+            padding-left: 18px;
+            min-width: 130px;
+            text-align: right;
+        }
+    }
+    .invite_title {
+        font-size: 140%;
+        line-height: 1.25em;
+        text-align: center;
+        color: $gray4D;
+    }
+    .no_points {
+        font-size: 120%;
+        line-height: 1.25em;
+        text-align: center;
+        color: $gray4D;
+        padding-bottom: 14px;
+    }
+    .friend_invite {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        .invite_title {
+            padding-bottom: 14px;
+        }
+        .invite_link {
+            display: block;
+            font-size: 140%;
+            line-height: 18px;
+            padding: 9px 18px;
+            text-align: center;
+            background: rgba($siteColor, 0.1);
+            border-radius: 8px;
+            @include lightButtonHover();
+        }
+    }
+    .loyality_points {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .from_payments {
+        height: 100%;
+        ul {
+            @extend %standardList;
+        }
+        li {
+            font-size: 120%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding: 12px 0;
+            border-bottom: 1px solid $footerBorder;
+            &.list_head {
+                font-size: 140%;
+                padding: 0 0 17px;
+                .item_inner {
+                    justify-content: space-between;
+                    margin: 0;
+                }
+            }
+            .fcoin_quantity {
+                padding-left: 20px;
+            }
+        }
+        .item_inner {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 -8px;
+        }
+        .service_type {
+            max-width: 60%;
+            flex: 0 0 60%;
+            padding: 0 8px;
+        }
+        .date_block {
+            color: $gray66;
+            text-align: right;
+            max-width: 18%;
+            flex: 0 0 18%;
+            padding: 0 8px;
+        }
+        .service_fcoin {
+            text-align: right;
+            max-width: 22%;
+            flex: 0 0 22%;
+            padding: 0 8px;
+        }
+    }
+    .product_section {
+        padding-top: 48px;
+        .tab_buttons {
+            padding-top: 0;
+        }
+    }
+    .tab_section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .product_list {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 -12px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        li {
+            padding: 24px 12px 0;
+            max-width: 25%;
+            flex: 0 0 25%;
+            // &:first-child{
+            //     padding-top: 10px !important;
+            // }
+        }
+        .item_inner {
+            background: $white;
+            border: 1px solid rgba($siteColor, 0.1);
+            box-sizing: border-box;
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .image_block {
+            display: block;
+            max-width: 100%;
+            @extend %square;
+        }
+        .info_block {
+            padding-top: 20px;
+        }
+        .info_title {
+            height: 36px;
+            @include textOverflow(2, relative);
+            a {
+                display: block;
+                font-size: 140%;
+                line-height: 18px;
+                color: $gray4D;
+            }
+        }
+        .change_btn {
+            background: rgba($siteColor, 0.1);
+            border-radius: 8px;
+            width: 100%;
+            font-size: 140%;
+            line-height: 18px;
+            text-align: center;
+            color: $siteColor;
+            padding: 9px;
+            border: none;
+            margin-top: 16px;
+            @include lightButtonHover();
+        }
+    }
+    .change_coins {
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .nearest_gift {
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $siteColor;
+            padding-bottom: 8px;
+            span {
+                color: $gray66;
+                display: inline-block;
+                padding-left: 2px;
+            }
+        }
+        .gift_line {
+            background: rgba($black33, 0.1);
+            border-radius: 16px;
+            width: 100%;
+            height: 4px;
+            position: relative;
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 16px;
+                background: $siteColor;
+            }
+        }
+    }
+    .gift_offer {
+        margin: 56px auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 32px;
+        max-width: 608px;
+        background: $white;
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        span {
+            display: block;
+            font-size: 140%;
+            line-height: 1.5em;
+            color: $gray4D;
+            padding-right: 10px;
+            flex: 1;
+            width: 50%;
+        }
+        a {
+            display: block;
+            background: rgba($siteColor, 0.1);
+            border-radius: 8px;
+            font-size: 140%;
+            line-height: 18px;
+            text-align: center;
+            color: $siteColor;
+            padding: 13px 24px;
+            border: none;
+            @include lightButtonHover();
+        }
+    }
+    @include mediaTo($size1200) {
+        .friends_list {
+            max-height: 300px;
+            .coins_block {
+                padding-left: 12px;
+                min-width: 110px;
+            }
+            .status_block {
+                margin-left: 12px;
+            }
+        }
+        .tab_buttons a {
+            padding: 10px;
+        }
+        .left_side {
+            .fcoin_inner {
+                padding: 40px 24px 20px;
+                .field_row {
+                    flex-direction: column;
+                    margin: 0;
+                    > div {
+                        padding: 0 0 10px;
+                        max-width: 100%;
+                        flex: 0 0 100%;
+                    }
+                }
+            }
+            .fcoin_bottom {
+                margin-top: 20px;
+                padding-top: 20px;
+                &:before {
+                    left: -24px;
+                    right: -24px;
+                }
+            }
+            .coin_quantity {
+                padding: 24px 20px;
+            }
+        }
+        .right_side .right_inner {
+            padding: 40px 24px 0;
+        }
+        .product_list {
+            li {
+                max-width: 33.3%;
+                flex: 33.3%;
+            }
+        }
+    }
+    @include mediaTo($size1024) {
+        .friends_list {
+            .coins_block {
+                padding-left: 18px;
+                min-width: 130px;
+            }
+            .status_block {
+                margin-left: 18px;
+            }
+        }
+        .left_side {
+            max-width: 100%;
+            flex: 0 0 100%;
+            .fcoin_inner {
+                padding: 40px 32px 20px;
+                .field_row {
+                    flex-direction: unset;
+                    margin: 0 -8px;
+                    > div {
+                        padding: 0 8px;
+                        max-width: 50%;
+                        flex: 0 0 50%;
+                    }
+                }
+            }
+            .fcoin_bottom {
+                margin-top: 32px;
+                padding-top: 20px;
+                &:before {
+                    left: -32px;
+                    right: -32px;
+                }
+            }
+            .coin_quantity {
+                padding: 24px;
+            }
+        }
+        .right_side {
+            max-width: 100%;
+            flex: 0 0 100%;
+            .right_inner {
+                padding: 40px 32px 0;
+            }
+        }
+        .fcoin_section {
+            flex-direction: column;
+        }
+    }
+    @include mediaTo($size960) {
+        .product_list {
+            li {
+                max-width: 50%;
+                flex: 50%;
+            }
+        }
+        .gift_offer {
+            margin: 35px auto 0;
+            padding: 16px 20px;
+        }
+        .friends_list {
+            .coins_block {
+                padding-left: 12px;
+                min-width: 110px;
+            }
+            .status_block {
+                margin-left: 12px;
+            }
+        }
+        .left_side {
+            .fcoin_inner {
+                padding: 40px 24px 20px;
+            }
+            .fcoin_bottom {
+                margin-top: 20px;
+                padding-top: 20px;
+                &:before {
+                    left: -24px;
+                    right: -24px;
+                }
+            }
+            .coin_quantity {
+                padding: 24px 20px;
+            }
+        }
+        .right_side .right_inner {
+            padding: 40px 24px 0;
+        }
+    }
+    @include mediaTo($size768) {
+        .change_inner .change_title {
+            font-size: 200%;
+        }
+        .product_list {
+            li {
+                max-width: 33.3%;
+                flex: 33.3%;
+            }
+        }
+        .left_side {
+            .fcoin_inner {
+                padding: 40px 32px 20px;
+            }
+            .fcoin_bottom {
+                margin-top: 32px;
+                padding-top: 20px;
+                &:before {
+                    left: -32px;
+                    right: -32px;
+                }
+            }
+            .coin_quantity {
+                padding: 24px;
+            }
+        }
+        .right_side {
+            .right_inner {
+                padding: 40px 32px 0;
+            }
+        }
+    }
+    @include mediaTo($size640) {
+        .change_inner {
+            max-width: 100%;
+        }
+        .product_list {
+            li {
+                max-width: 50%;
+                flex: 50%;
+            }
+        }
+    }
+    @include mediaTo($size525) {
+        .change_inner {
+            padding: 30px 20px;
+            .close_btn {
+                right: 10px;
+                top: 10px;
+                font-size: 140%;
+            }
+            .main_icon {
+                margin-bottom: 18px;
+            }
+            .buttons_row {
+                flex-direction: column;
+                padding-top: 0;
+                button {
+                    width: 100%;
+                }
+                .cancel_btn {
+                    margin: 0 0 16px;
+                }
+            }
+        }
+        .product_list {
+            ul {
+                margin: 0 -8px;
+            }
+            li {
+                padding: 16px 8px 0;
+            }
+        }
+        .gift_offer {
+            margin: 25px auto 0;
+            padding: 15px;
+            flex-direction: column;
+            span {
+                width: 100%;
+                padding: 0 0 12px;
+                text-align: center;
+            }
+        }
+        .left_side {
+            .fcoin_inner {
+                padding: 40px 24px 20px;
+            }
+            .fcoin_bottom {
+                margin-top: 20px;
+                padding-top: 20px;
+                &:before {
+                    left: -24px;
+                    right: -24px;
+                }
+            }
+            .coin_quantity {
+                padding: 24px 20px;
+            }
+        }
+        .right_side .right_inner {
+            padding: 40px 24px 0;
+        }
+    }
+    @include mediaTo($size480) {
+        .change_inner {
+            .change_title {
+                font-size: 180%;
+            }
+            .main_icon {
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+                font-size: 200%;
+            }
+        }
+        .product_list {
+            .item_inner {
+                padding: 15px 10px;
+            }
+            .info_title {
+                height: 32px;
+                a {
+                    font-size: 130%;
+                    line-height: 16px;
+                }
+            }
+            .change_btn {
+                font-size: 130%;
+                line-height: 16px;
+            }
+        }
+        .right_side {
+            .right_inner {
+                padding: 30px 12px 0;
+            }
+            .tab_buttons ul {
+                position: relative;
+                width: 100%;
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+            }
+        }
+        .left_side {
+            max-width: 100%;
+            flex: 0 0 100%;
+            .fcoin_inner {
+                padding: 30px 12px 12px;
+                .field_row {
+                    flex-direction: column;
+                    margin: 0 0;
+                    > div {
+                        padding: 0 0 10px;
+                        max-width: 100%;
+                        flex: 0 0 100%;
+                    }
+                }
+            }
+            .fcoin_bottom {
+                margin-top: 20px;
+                padding-top: 20px;
+                &:before {
+                    left: -12px;
+                    right: -12px;
+                }
+            }
+        }
+        .friends_list {
+            margin-right: -12px;
+            .coins_block {
+                padding-left: 10px;
+                min-width: 90px;
+            }
+            .status_block {
+                margin-left: 10px;
+            }
+        }
+        .from_payments {
+            .item_inner {
+                flex-wrap: wrap;
+            }
+            .service_type {
+                max-width: 100%;
+                flex: 100%;
+                padding-bottom: 15px;
+            }
+            .date_block {
+                max-width: 50%;
+                flex: 50%;
+                text-align: left;
+            }
+            .service_fcoin {
+                max-width: 50%;
+                flex: 50%;
+            }
+        }
+    }
+    @include mediaTo($size400) {
+        .change_inner {
+            padding: 30px 15px;
+            .buttons_row {
+                button {
+                    font-size: 140%;
+                    line-height: 18px;
+                }
+                .active_btn {
+                    padding: 14px;
+                }
+            }
+            .change_title {
+                font-size: 160%;
+            }
+            .field_title {
+                font-size: 130%;
+            }
+            .change_description {
+                padding-bottom: 0;
+                font-size: 130%;
+            }
+            .active_btn {
+                font-size: 140%;
+                line-height: 18px;
+                padding: 14px;
+                width: 100%;
+                min-width: auto;
+                margin-top: 24px;
+            }
+            input {
+                font-size: 130%;
+                line-height: 16px;
+                padding: 13px;
+            }
+        }
+        .product_list {
+            ul {
+                margin: 0;
+            }
+            li {
+                padding: 24px 0 0;
+                max-width: 100%;
+                flex: 100%;
+            }
+            .item_inner {
+                padding: 20px;
+            }
+            .info_title {
+                height: 36px;
+                a {
+                    font-size: 140%;
+                    line-height: 18px;
+                }
+            }
+            .change_btn {
+                font-size: 140%;
+                line-height: 18px;
+            }
+        }
+        .overall_row {
+            font-size: 130%;
+            .overall_coins {
+                padding-left: 12px;
+            }
+        }
+        .friends_list {
+            li {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .status_block {
+                margin-left: 0;
+            }
+            .coins_block {
+                max-width: 50%;
+                flex: 50%;
+            }
+            .name_block {
+                max-width: 100%;
+                flex: 100%;
+                padding-bottom: 15px;
+            }
+        }
+    }
+}
+
+@import "../../assets/sass/imports/main/extendsEnd";

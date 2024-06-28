@@ -1,0 +1,1122 @@
+@import "../../assets/sass/imports/main/variables";
+@import "../../assets/sass/imports/main/mixins";
+@import "../../assets/sass/imports/main/extendsStart";
+@import "../../assets/sass/imports/personal/personalGeneral";
+body.delete_avatar_popup {
+    overflow: hidden;
+    .delete_image {
+        top: 0;
+    }
+}
+.profile_page {
+    .delete_image {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        z-index: 2000;
+        background: rgba($gray99, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include animStyle(top 0.5s);
+    }
+    .change_inner {
+        background: $white;
+        border: 1px solid $footerBorder;
+        box-sizing: border-box;
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        padding: 52px 40px 32px;
+        position: relative;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include customScroll(3px, auto, 3px, 20px, 20px, rgba($siteColor, 0.1), $siteColor);
+        .close_btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            color: $gray99;
+            border: none;
+            background: transparent;
+            font-size: 160%;
+            @include siteColorAlfaHover();
+        }
+        .buttons_row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: 12px;
+            button {
+                font-size: 160%;
+                line-height: 20px;
+                text-align: center;
+                border: none;
+            }
+            .cancel_btn {
+                color: $siteColor;
+                background: transparent;
+                margin-right: 48px;
+                @include siteColorAlfaHover();
+            }
+            .change_btn {
+                background: $siteColor;
+                border-radius: 8px;
+                padding: 17px;
+                min-width: 203px;
+                color: $white;
+                @include siteBgAlfaHover();
+            }
+        }
+        .change_title {
+            padding-bottom: 20px;
+            font-size: 240%;
+            line-height: 1.42em;
+            color: $gray4D;
+            span {
+                color: $siteColor;
+                display: inline-block;
+            }
+        }
+        .success_title {
+            color: $successColor;
+            text-align: center;
+            padding-bottom: 0;
+        }
+        .main_icon {
+            display: block;
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            font-size: 240%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid $successColor;
+            color: $successColor;
+            border-radius: 16px;
+            margin: 0 auto 21px;
+        }
+        .field_block {
+            padding-top: 20px;
+        }
+        .field_title {
+            font-size: 140%;
+            line-height: 1.25em;
+            padding-bottom: 8px;
+            color: $gray4D;
+        }
+        input {
+            background: $white;
+            border: 1px solid $footerBorder;
+            border-radius: 8px;
+            font-size: 140%;
+            line-height: 18px;
+            padding: 13px 16px;
+            color: $gray99;
+        }
+        .change_description {
+            font-size: 140%;
+            line-height: 1.42em;
+            color: $gray4D;
+            padding-bottom: 12px;
+        }
+        .active_btn {
+            font-size: 160%;
+            line-height: 20px;
+            text-align: center;
+            margin: 32px 0 0 auto;
+            min-width: 268px;
+            border: none;
+            background: $siteColor;
+            border-radius: 8px;
+            padding: 17px;
+            color: $white;
+            @include siteBgAlfaHover();
+        }
+    }
+    .service_title {
+        padding-bottom: 0;
+    }
+    .right_col {
+        padding-bottom: 20px;
+    }
+    .item_inner {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        padding: 48px 40px 24px;
+        height: 100%;
+    }
+    .profile_list {
+        list-style-type: none;
+        margin: 0 -12px;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        input {
+            background: $white;
+            border: 1px solid $footerBorder;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-size: 140%;
+            line-height: 18px;
+            color: $gray4D;
+            padding: 13px 40px 13px 16px;
+        }
+        // button
+        .validate_btn.change_pass,
+        .info_bottom .pp_btn {
+            background: rgba($siteColor, 0.1);
+            border-radius: 8px;
+            font-size: 140%;
+            line-height: 18px;
+            padding: 13px 16px;
+            min-width: 160px;
+            margin-left: auto;
+            border: none;
+            color: $siteColor;
+            margin-top: 16px;
+            @include lightButtonHover();
+            &.change_pass {
+                margin-top: 24px;
+            }
+            &.add_email {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    }
+    li {
+        padding: 0 12px 24px;
+        max-width: 50%;
+        flex: 0 0 50%;
+        &.person_info {
+            .item_inner {
+                padding: 0;
+            }
+        }
+    }
+    .info_top {
+        padding: 40px 40px 14px;
+        border-bottom: 1px solid $footerBorder;
+        background: $white;
+        border-radius: 16px 16px 0 0;
+    }
+    .info_bottom {
+        padding: 20px 40px 24px;
+        border-radius: 0 0 16px 16px;
+        .field_block {
+            padding-top: 0;
+        }
+        .pp_btn:first-child:last-child {
+            width: 100%;
+        }
+    }
+    .info_row {
+        display: flex;
+        padding-top: 13px;
+        .image_block {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            @extend %square;
+        }
+    }
+    .name_block {
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-top: 15px;
+    }
+    .info_block {
+        padding-left: 20px;
+    }
+    .user_number {
+        font-size: 120%;
+        line-height: 1.5em;
+        color: $gray4D;
+        padding-top: 8px;
+    }
+    .buttons_row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 -12px;
+        padding-top: 9px;
+        > div {
+            padding: 0 12px;
+        }
+        a {
+            font-size: 120%;
+            line-height: 1.25em;
+        }
+    }
+    .image_change {
+        display: block;
+        background: transparent;
+        border: 1px solid $footerBorder;
+        box-sizing: border-box;
+        border-radius: 8px;
+        color: $siteColor;
+        padding: 9px;
+        text-align: center;
+        min-width: 110px;
+        @include lightButtonHover();
+    }
+    .image_remove {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        color: $gray66;
+        text-align: center;
+        min-width: 110px;
+        @include siteColorAlfaHover();
+        &:before {
+            display: block;
+            margin-right: 7px;
+            font-size: 160%;
+        }
+    }
+    .field_title {
+        padding-bottom: 8px;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray4D;
+    }
+    .section_description {
+        font-size: 140%;
+        line-height: 1.5em;
+        color: $gray66;
+        padding-top: 16px;
+    }
+    .field_block {
+        padding-top: 24px;
+    }
+
+    .change_pass .field_block {
+        padding-top: 24px;
+
+    }
+    .add_new {
+        padding-top: 16px;
+        display: flex;
+        justify-content: center;
+    }
+    .add_card {
+        display: flex;
+        align-items: center;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $siteColor;
+        @include siteColorAlfaHover();
+        span {
+            display: flex;
+            margin-left: 8px;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            font-size: 80%;
+            min-width: 26px;
+            background: $siteColor;
+            box-shadow: 0px 3.71429px 20.4286px rgba($siteColor, 0.04), 0px 0.928571px 6.5px rgba($siteColor, 0.03);
+            border-radius: 50%;
+            color: $white;
+        }
+    }
+    .profile_card {
+        margin-top: 32px;
+        .slide_content {
+            max-width: 370px;
+            margin: 0 auto;
+            background: $siteColor;
+            border-radius: 16px;
+            @extend %standardWide;
+        }
+        .slide_inner {
+            max-width: 100%;
+            padding: 24px 28px 28px 32px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(108.17deg, rgba($white, 0.2) 0%, rgba($white, 0.5) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    .attach_section {
+        position: relative;
+        .image_block{
+            padding-bottom: 12px;
+            img {
+                max-width: 64px;
+            }
+        }
+        &.hovered {
+            .card_remove {
+                opacity: 1;
+                background: white !important;
+                cursor: pointer;
+            }
+        }
+    }
+    .wallet_block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 72px;
+        min-width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: $footerBorder;
+        color: $siteColor;
+        font-size: 330%;
+        margin: 54px auto 0;
+    }
+    .attach_description {
+        padding-top: 12px;
+        font-size: 140%;
+        text-align: center;
+        line-height: 1.25em;
+        color: $gray4D;
+    }
+    .card_remove {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        background: $white;
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 5;
+        opacity: 0;
+        font-size: 150%;
+        color: $gray4D;
+        @include lightButtonHover();
+    }
+    .card_code {
+        font-size: 160%;
+        line-height: 1.25em;
+        color: $white;
+        display: flex;
+        align-items: center;
+        margin: 0 -12px;
+        padding-bottom: 12px;
+        span {
+            padding: 0 12px;
+            display: block;
+        }
+    }
+    .name_row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $white;
+    }
+    .card_owner {
+        flex: 1;
+        width: 50%;
+        padding-right: 10px;
+    }
+    .info_content li {
+        max-width: none;
+        flex: none;
+    }
+    .pass_form {
+        padding-top: 8px;
+    }
+    .time_code {
+        margin-bottom: auto;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 140%;
+        line-height: 1.25em;
+        text-align: center;
+        text-decoration-line: underline;
+        color: $gray4D;
+        padding-bottom: 84px;
+    }
+    .success_inner {
+        .main_icon {
+            display: block;
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            font-size: 240%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid $successColor;
+            color: $successColor;
+            border-radius: 16px;
+            margin: 0 auto 32px;
+        }
+        .success_title {
+            font-size: 240%;
+            line-height: 1.42em;
+            color: $successColor;
+            text-align: center;
+            padding-bottom: 24px;
+            span {
+                color: $siteColor;
+                display: inline-block;
+            }
+        }
+        .success_description {
+            font-size: 140%;
+            line-height: 1.25em;
+            text-align: center;
+            color: $gray4D;
+        }
+    }
+    
+    @include mediaTo($size1200) {
+        .profile_page {
+            .wallet_block {
+                margin-top: 30px;
+            }
+            .item_inner {
+                padding: 40px 20px 20px;
+            }
+            .info_top {
+                padding: 40px 20px 14px;
+            }
+            .info_bottom {
+                padding: 20px;
+            }
+            .info_row .image_block {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+            }
+            .buttons_row {
+                flex-direction: column;
+                align-items: unset;
+                margin: 0;
+                > div {
+                    width: 100%;
+                    padding: 0;
+                }
+                .image_remove {
+                    margin-top: 14px;
+                }
+            }
+            .card_code {
+                font-size: 140%;
+            }
+            .name_row {
+                font-size: 130%;
+            }
+            .profile_card .slide_inner {
+                padding: 20px 20px 24px;
+            }
+        }
+    }
+    @include mediaTo($size960) {
+        .time_code {
+            padding-bottom: 60px;
+        }
+        .profile_page {
+            li {
+                padding: 0 12px 24px;
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+            .info_row .image_block {
+                width: 80px;
+                height: 80px;
+                min-width: 80px;
+            }
+            .buttons_row {
+                flex-direction: unset;
+                align-items: center;
+                margin: 0 -12px;
+                > div {
+                    width: auto;
+                    padding: 0 12px;
+                }
+                .image_remove {
+                    margin-top: 0;
+                }
+            }
+            .card_code {
+                font-size: 160%;
+            }
+            .name_row {
+                font-size: 140%;
+            }
+            .profile_card .slide_inner {
+                padding: 24px 30px;
+            }
+        }
+    }
+    @include mediaTo($size768) {
+        .success_inner {
+            .success_title {
+                font-size: 200%;
+            }
+        }
+    }
+    @include mediaTo($size576) {
+        .time_code {
+            padding-bottom: 40px;
+        }
+    }
+    @include mediaTo($size480) {
+        .profile_page {
+            .wallet_block {
+                min-width: 60px;
+                width: 60px;
+                height: 60px;
+                font-size: 260%;
+                margin-top: 24px;
+            }
+            .item_inner {
+                padding: 30px 15px 20px;
+            }
+            .info_top {
+                padding: 30px 15px 14px;
+            }
+            .info_bottom {
+                padding: 20px 15px;
+            }
+            .info_row .image_block {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+            }
+            .buttons_row {
+                flex-direction: column;
+                align-items: unset;
+                margin: 0;
+                > div {
+                    width: 100%;
+                    padding: 0;
+                }
+                .image_remove {
+                    margin-top: 14px;
+                }
+            }
+        }
+        .success_inner {
+            .success_title {
+                font-size: 180%;
+                padding-bottom: 18px;
+            }
+            .success_description {
+                font-size: 130%;
+            }
+            .main_icon {
+                margin-bottom: 24px;
+            }
+        }
+    }
+    @include mediaTo($size400) {
+        .profile_page {
+            .show_pass {
+                font-size: 150%;
+                bottom: 15px;
+            }
+            .profile_list {
+                button {
+                    width: 100%;
+                }
+            }
+            .info_block {
+                padding-left: 12px;
+            }
+            .profile_card {
+                margin-top: 20px;
+                .slide_inner {
+                    padding: 20px;
+                }
+            }
+            .card_code {
+                font-size: 140%;
+            }
+            .name_row {
+                font-size: 130%;
+            }
+            .card_remove {
+                width: 30px;
+                height: 30px;
+                min-width: 30px;
+                font-size: 120%;
+                border-radius: 10px;
+            }
+            .image_block img {
+                max-width: 50px;
+            }
+        }
+        .time_code {
+            font-size: 130%;
+            padding-bottom: 40px;
+        }
+        .success_inner {
+            .main_icon {
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+                font-size: 200%;
+            }
+        }
+    }
+    .email_popup {
+        @include popupBlock(0.5s);
+    }
+
+    .pp_block {
+        .pp_inner {
+            @include popupInner($containerPadding);
+        }
+        .pp_container {
+            @include popupContainer($white, 450px, 18px 40px 32px);
+            box-shadow: 0px 8px 44px rgba(76, 23, 208, 0.04), 0px 2px 14px rgba(76, 23, 208, 0.03);
+            border-radius: 16px;
+        }
+        .pp_close {
+            position: relative;
+            margin-left: auto;
+            border: none;
+            padding: 0;
+            margin-bottom: 17px;
+            margin-right: -22px;
+            background: transparent;
+            font-size: 160%;
+            color: $gray99;
+            @include siteColorHover;
+            &:before {
+                display: block;
+            }
+        }
+        .pp_title {
+            font-size: 240%;
+            line-height: 1.4em;
+            font-family: $bold;
+            margin-bottom: 12px;
+        }
+        .pp_description {
+            font-size: 140%;
+            line-height: 20px;
+            color: $gray4D;
+            margin-bottom: 32px;
+        }
+        .field_block {
+            padding-top: 0;
+
+            margin-bottom: 24px;
+            .field_title {
+                padding-bottom: 8px;
+                font-size: 140%;
+                line-height: 1.25em;
+                color: $gray4D;
+            }
+            .error_hint {
+                font-size: 120%;
+                line-height: 15px;
+                right: 0;
+                top: 100%;
+                position: absolute;
+            }
+            > input {
+                background: $white;
+                border: 1px solid $footerBorder;
+                box-sizing: border-box;
+                border-radius: 8px;
+                font-size: 140%;
+                line-height: 18px;
+                color: $gray4D;
+                padding: 13px 40px 13px 16px;
+            }
+        }
+        .show_pass {
+            margin-top: -27px;
+            @extend %noBlink;
+        }
+        .btn_block {
+            padding-top: 8px;
+            button {
+                width: 100%;
+                background: $siteColor;
+                color: $white;
+                border: none;
+                font-size: 160%;
+                line-height: 24px;
+                padding: 15px;
+                border-radius: 8px;
+                @include lightButtonHover();
+            }
+        }
+        @include mediaTo($size480) {
+            .pp_container {
+                padding-left: $containerPadding;
+                padding-right: $containerPadding;
+            }
+            .pp_close {
+                margin-right: 0;
+            }
+        }
+        @include mediaTo($size400) {
+            .show_pass {
+                margin-top: -17px;
+            }
+        }
+    }
+
+    .time_code {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 140%;
+        line-height: 1.25em;
+        text-align: center;
+        text-decoration-line: underline;
+        color: #4d4d4d;
+        padding-top: 24px;
+    }
+
+    .field_block {
+        width: 100%;
+        // padding: unset !important;
+        flex: unset !important;
+        max-width: 100% !important;
+    }
+
+    .code_input {
+        display: flex;
+        justify-content: center;
+        width: 100% !important;
+
+        .react-code-input {
+            input {
+                height: 68px !important;
+                border: 1px solid #e9e4f7 !important;
+                width: 100% !important;
+                max-width: 20.6%;
+                flex: 0 0 20.6%;
+                margin: 0 8px;
+                border-radius: 8px;
+                    
+            }
+            @include mediaTo($size480) {
+                padding: 15px 0 0;
+                input{
+                    height: 68px !important;
+                    width: 68px !important;
+                }
+            }
+        }
+    }
+}
+
+
+@include mediaTo($size1200){
+    .profile_page{
+        .wallet_block{
+            margin-top: 30px;
+        }
+        .item_inner{
+            padding: 40px 20px 20px;
+        }
+        .info_top {
+            padding: 40px 20px 14px;
+        }
+        .info_bottom {
+            padding: 20px;
+        }
+        .info_row .image_block {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+        }
+        .buttons_row{
+            flex-direction: column;
+            align-items: unset;
+            margin: 0;
+            >div{
+                width: 100%;
+                padding: 0;
+            }
+            .image_remove{
+                margin-top: 14px;
+            }
+        }
+        .card_code{
+            font-size: 140%;
+        }
+        .name_row{
+            font-size: 130%;
+        }
+        .profile_card .slide_inner{
+            padding: 20px 20px 24px;
+        }
+    } 
+}
+@include mediaTo($size960){
+    .time_code{
+        padding-bottom: 60px;
+    }
+    .profile_page{
+        li {
+            padding: 0 12px 24px;
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        .info_row .image_block {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+        }
+        .buttons_row{
+            flex-direction: unset;
+            align-items: center;
+            margin: 0 -12px;
+            >div{
+                width: auto;
+                padding: 0 12px;
+            }
+            .image_remove{
+                margin-top: 0;
+            }
+        }
+        .card_code{
+            font-size: 160%;
+        }
+        .name_row{
+            font-size: 140%;
+        }
+        .profile_card .slide_inner{
+            padding: 24px 30px;
+        }
+    } 
+}
+@include mediaTo($size768){
+    .success_inner{
+        .success_title{
+            font-size: 200%;
+        }
+    }
+}
+@include mediaTo($size576){
+    .time_code{
+        padding-bottom: 40px;
+    }
+}
+@include mediaTo($size480){
+    .profile_page{
+        .wallet_block{
+            min-width: 60px;
+            width: 60px;
+            height: 60px;
+            font-size: 260%;
+            margin-top: 24px;
+        }
+        .item_inner{
+            padding: 30px 15px 20px;
+        }
+        .info_top {
+            padding: 30px 15px 14px;
+        }
+        .info_bottom {
+            padding: 20px 15px;
+        }
+        .info_row .image_block {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+        }
+        .buttons_row{
+            flex-direction: column;
+            align-items: unset;
+            margin: 0;
+            >div{
+                width: 100%;
+                padding: 0;
+            }
+            .image_remove{
+                margin-top: 14px;
+            }
+        }
+    } 
+    .success_inner{
+        .success_title{
+            font-size: 180%;
+            padding-bottom: 18px;
+        }
+        .success_description{
+            font-size: 130%;
+        }
+        .main_icon{
+            margin-bottom: 24px;
+        }
+    }
+}
+@include mediaTo($size400){
+    .profile_page{
+        .show_pass{
+            font-size: 150%;
+            bottom: 15px;
+        }
+        .profile_list{
+            button{
+                width: 100%;
+            }
+        }
+        .info_block {
+            padding-left: 12px;
+        }
+        .profile_card {
+            margin-top: 20px;
+            .slide_inner{
+                padding: 20px;
+            }
+        }
+        .card_code{
+            font-size: 140%;
+        }
+        .name_row{
+            font-size: 130%;
+        }
+        .card_remove{
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            font-size: 120%;
+            border-radius: 10px;
+        }
+        .image_block img{
+            max-width: 50px;
+        }
+    }  
+    .time_code{
+        font-size: 130%;
+        padding-bottom: 40px;
+    }
+    .success_inner{
+        .main_icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            font-size: 200%;
+        }
+    }
+}
+.email_popup {
+    @include popupBlock(0.5s);
+}
+.pp_block {
+    .pp_inner {
+        @include popupInner($containerPadding);
+    }
+    .pp_container {
+        @include popupContainer($white,450px, 18px 40px 32px);
+        box-shadow: 0px 8px 44px rgba(76, 23, 208, 0.04), 0px 2px 14px rgba(76, 23, 208, 0.03);
+        border-radius: 16px;
+    }
+    .pp_close {
+        position: relative;
+        margin-left: auto;
+        border: none;
+        padding: 0;
+        margin-bottom: 17px;
+        margin-right: -22px;
+        background: transparent;
+        font-size: 160%;
+        color: $gray99;
+        @include siteColorHover;
+        &:before {
+            display: block;
+        }
+    }
+    .pp_title {
+        font-size: 240%;
+        line-height: 1.4em;
+        font-family: $bold;
+        margin-bottom: 12px;
+    }
+    .pp_description {
+        font-size: 140%;
+        line-height: 20px;
+        color: $gray4D;
+        margin-bottom: 32px;
+    }
+    .field_block {
+        margin-bottom: 24px;
+        .field_title{
+            padding-bottom: 8px;
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray4D;
+        }
+        .error_hint {
+            font-size: 120%;
+            line-height: 15px;
+            right: 0;
+            top: 100%;
+            position: absolute;
+        }
+        > input{
+            background: $white;
+            border: 1px solid $footerBorder;
+            box-sizing: border-box;
+            border-radius: 8px;
+            font-size: 140%;
+            line-height: 18px;
+            color: $gray4D;
+            padding: 13px 40px 13px 16px;
+        }
+        
+    }
+    .show_pass {
+        margin-top: -27px;
+        @extend %noBlink;
+    }
+    .btn_block {
+        padding-top: 8px;
+        button {
+            width: 100%;
+            background: $siteColor;
+            color: $white;
+            border: none;
+            font-size: 160%;
+            line-height: 24px;
+            padding: 15px;
+            border-radius: 8px;
+            @include lightButtonHover();
+        }
+    }
+    @include mediaTo($size480) {
+        .pp_container {
+            padding-left: $containerPadding;
+            padding-right: $containerPadding;
+        }
+        .pp_close {
+            margin-right: 0;
+        }
+    }
+    @include mediaTo($size400) {
+        .show_pass {
+            margin-top: -17px;
+        }
+    }}
+
+
+@import "../../assets/sass/imports/main/extendsEnd";

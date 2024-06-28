@@ -1,0 +1,72 @@
+//font families
+$regular:"roboto", "mardoto-regular";
+$bold: "roboto-bold","mardoto-bold";
+$medium: "roboto-medium","mardoto-medium";
+//media query sizes
+$size320: 320px;
+$size360: 360px;
+$size400: 400px;
+$size480: 480px;
+$size525: 525px;
+$size576: 576px;
+$size600: 600px;
+$size640: 640px;
+$size720: 720px;
+$size768: 768px;
+$size960: 960px;
+$size1024: 1024px;
+$size1100: 1100px;
+$size1200: 1200px;
+$size1366: 1366px;
+$size1440: 1440px;
+$size1600: 1600px;
+
+//colors
+$black: #000000;
+$black33: #333333;
+$gray66: #666666;
+$gray99: #999999;
+$grayE5: #e5e5e5;
+$white: #ffffff;
+$creamyF2: #f2f2f2;
+$error: #b94a48;
+$siteColor: #4c17d0;
+$textColor: $black33;
+$gray77: #777777;
+$footerBorder: #e9e4f7;
+$hoverBorder: rgba(76, 23, 208, 0.5);
+$bodyBg: #f8f6fe;
+$gradientBg: linear-gradient(154.02deg, rgba($white, 0.8) 0%, rgba($white, 0.5) 100%);
+$gray4D: #4d4d4d;
+$businessBg: #3d3d40;
+$businessColor: #d8c2a6;
+$creamyF5: #f5f5f5;
+$footerBusinessColor: #c9b499;
+$buttonHover: #3b12a1;
+$blue49: #491cbb;
+$successColor: #41a764;
+$branchesBorder: #e8e1f9;
+$notifBg: #fc0a88;
+$onColor: #41a764;
+$offColor: #eb4343;
+$yellow: #ffd000;
+$procColor:#E99D2B;
+
+//social icons original color
+$facebookColor: #3b5998;
+$twitterColor: #00acee;
+$youtubeColor: #c4302b;
+$behanceColor: #053eff;
+$linkedinColor: #0e76a8;
+$okColor: #ed812b;
+$pinterestColor: #c8232c;
+$vkColor: #4c75a3;
+$tiktokColor: #ee1d52;
+$telegramColor: #0088cc;
+$instagramColor: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+
+//sizes
+$containerWidth: 1240px;
+$containerPadding: 15px;
+$colPadding: 15px;
+$rowMargin: -$colPadding;

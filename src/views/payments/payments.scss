@@ -1,0 +1,815 @@
+@import "../../assets/sass/imports/main/variables";
+@import "../../assets/sass/imports/main/mixins";
+@import "../../assets/sass/imports/main/extendsStart";
+@import "../../assets/sass/imports/personal/personalGeneral";
+
+.choose_payment_page {
+    .paging_way {
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 32px 0 0;
+            margin: 0 -30px;
+        }
+        li {
+            position: relative;
+            padding: 0 30px;
+            &:last-child {
+                span:after {
+                    right: 100%;
+                    left: unset;
+                }
+            }
+        }
+        div {
+            font-size: 120%;
+            line-height: 1.25em;
+            color: $gray99;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            &.selected {
+                span {
+                    background: $siteColor;
+                    color: $white;
+                    &:after {
+                        background: $siteColor;
+                    }
+                }
+            }
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid $gray99;
+                box-sizing: border-box;
+                width: 20px;
+                min-width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                font-size: 65%;
+                margin-top: 8px;
+                position: relative;
+                background: $white;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 8px;
+                    background: $gray99;
+                    width: 115px;
+                    height: 1px;
+                    z-index: -1;
+                    left: 100%;
+                }
+            }
+            &.selected {
+                color: $gray4D;
+            }
+        }
+    }
+    .payment_service {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        .service_top {
+            padding: 32px 40px 0;
+            .service_title {
+                padding-bottom: 0;
+            }
+        }
+        .bottom_block {
+            background: rgba($white, 0.8);
+            box-shadow: 0px 40px 200px rgba($siteColor, 0.07), 0px 8px 44px rgba($siteColor, 0.04),
+                0px 2px 14px rgba($siteColor, 0.03);
+            border-radius: 16px 16px 0px 0px;
+            padding: 30px 40px 24px 80px;
+            margin-top: 23px;
+        }
+        .bottom_title {
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding-bottom: 12px;
+        }
+        .drop_element {
+            display: none;
+            padding: 0 40px 24px 28px;
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray4D;
+        }
+        .payment_list {
+            @extend %standardList;
+            padding-top: 24px;
+            li {
+                margin-bottom: 16px;
+            }
+        }
+        .item_inner {
+            box-sizing: border-box;
+            background: $white;
+            border: 1px solid $footerBorder;
+            border-radius: 16px;
+            padding: 32px 28px 24px 16px;
+            border-radius: 16px;
+            &:hover {
+                border: 1px solid $hoverBorder;
+            }
+        }
+        .service_type {
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray66;
+            padding: 17px 0 0 46px;
+        }
+        .payment_month {
+            font-size: 120%;
+            line-height: 1.25em;
+            color: $gray66;
+            padding: 12px 0 0 46px;
+        }
+        input {
+            @extend %maskedInput;
+            &:checked {
+                + .checkbox_button {
+                    &:before {
+                        background: $siteColor;
+                        font-size: 66.7%;
+                    }
+                    .inner_title {
+                        color: $gray4D;
+                    }
+                    .service_id {
+                        color: $gray4D;
+                    }
+                    .service_price {
+                        color: $siteColor;
+                    }
+                }
+            }
+        }
+        .checkbox_button {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            @include opacityHover();
+            @extend %all300;
+            &:before {
+                color: $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 22px;
+                font-size: 62.5%;
+                min-width: 22px;
+                height: 22px;
+                margin-left: 12px;
+                border-radius: 4px;
+                border: 1px solid $gray99;
+                font-size: 0;
+            }
+        }
+        .checkbox_inner {
+            display: flex;
+            align-items: flex-start;
+            flex: 1;
+            width: 80%;
+            > span {
+                padding: 0 12px;
+                display: block;
+            }
+        }
+        .price_row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a {
+                display: block;
+                font-size: 160%;
+                line-height: 20px;
+                padding: 17px;
+                border-radius: 8px;
+                color: $white;
+                background: $siteColor;
+                text-align: center;
+                min-width: 260px;
+                @include siteBgAlfaHover();
+            }
+        }
+        .total_sum {
+            font-family: $bold;
+            font-size: 320%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding-right: 15px;
+        }
+        .inner_title {
+            max-width: 62%;
+            flex: 0 0 62%;
+            color: $gray66;
+            font-size: 160%;
+            line-height: 1.25em;
+        }
+        .service_id {
+            max-width: 18%;
+            flex: 0 0 18%;
+            font-size: 120%;
+            line-height: 1.25em;
+            color: $gray66;
+            text-align: right;
+        }
+        .service_price {
+            max-width: 20%;
+            flex: 0 0 20%;
+            font-family: $bold;
+            font-size: 160%;
+            line-height: 1.25em;
+            color: $gray66;
+            text-align: right;
+        }
+        @include mediaTo($size1200) {
+            .item_inner {
+                padding: 32px 18px 24px;
+            }
+            .service_id {
+                max-width: 22%;
+                flex: 0 0 22%;
+            }
+            .inner_title {
+                max-width: 58%;
+                flex: 0 0 58%;
+                font-size: 140%;
+            }
+            .service_price {
+                font-size: 140%;
+            }
+            .checkbox_inner > span {
+                padding: 0 10px;
+            }
+            .bottom_block {
+                padding: 30px 30px 24px 50px;
+            }
+            .total_sum {
+                font-size: 280%;
+            }
+            .service_top {
+                padding: 30px 30px 0;
+            }
+        }
+        @include mediaTo($size960) {
+            .item_inner {
+                padding: 30px 12px 24px;
+            }
+            .service_id {
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+            .inner_title {
+                max-width: 100%;
+                flex: 0 0 100%;
+                font-size: 160%;
+                padding: 0 10px 12px !important;
+            }
+            .service_price {
+                font-size: 140%;
+                max-width: 50%;
+                flex: 0 0 50%;
+            }
+            .checkbox_inner {
+                flex-wrap: wrap;
+            }
+            .checkbox_button:before {
+                margin: 0;
+            }
+            .service_id {
+                text-align: left;
+            }
+            .service_price {
+                text-align: left;
+                font-size: 160%;
+            }
+            .bottom_block {
+                padding: 30px 30px 24px;
+            }
+            .total_sum {
+                font-size: 240%;
+            }
+            .service_top {
+                padding: 30px 20px 0;
+            }
+            .bottom_block {
+                padding: 30px 20px 24px;
+            }
+            .price_row a {
+                font-size: 140%;
+                padding: 15px;
+                min-width: 210px;
+            }
+            .payment_month {
+                padding: 12px 0 0 32px;
+            }
+            .service_type {
+                padding: 17px 0 0 32px;
+            }
+        }
+        @include mediaTo($size768) {
+            .item_inner {
+                padding: 30px 18px 24px;
+            }
+            .service_top {
+                padding: 30px 30px 0;
+            }
+            .bottom_block {
+                padding: 30px 30px 24px;
+            }
+        }
+        @include mediaTo($size525) {
+            .service_top {
+                padding: 24px 20px 0;
+            }
+            .bottom_block {
+                padding: 24px 20px;
+            }
+        }
+        @include mediaTo($size480) {
+            .item_inner {
+                padding: 24px 10px;
+            }
+            .inner_title {
+                font-size: 140%;
+            }
+            .price_row {
+                flex-direction: column;
+                align-items: flex-start;
+                a {
+                    width: 100%;
+                    margin-top: 12px;
+                }
+            }
+            .total_sum {
+                font-size: 280%;
+            }
+        }
+        @include mediaTo($size400) {
+            .item_inner {
+                padding: 20px 5px 20px 15px;
+            }
+            .service_top {
+                padding: 24px 15px 0;
+            }
+            .bottom_block {
+                padding: 24px 15px;
+            }
+            .inner_title {
+                font-size: 140%;
+            }
+            .service_id {
+                max-width: 100%;
+                flex: 0 0 100%;
+            }
+            .service_price {
+                max-width: 100%;
+                flex: 0 0 100%;
+                padding-top: 8px !important;
+            }
+            .service_type {
+                font-size: 130%;
+            }
+            .checkbox_button:before {
+                font-size: 50%;
+                width: 18px;
+                min-width: 18px;
+                height: 18px;
+            }
+            .service_type {
+                padding: 15px 0 0 28px;
+            }
+            .payment_month {
+                padding: 12px 0 0 28px;
+            }
+            .total_sum {
+                font-size: 240%;
+            }
+        }
+    }
+
+    .choose_card {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        .service_top {
+            padding: 32px 40px 40px;
+            .service_title {
+                padding-bottom: 0;
+            }
+        }
+        .bottom_block {
+            background: rgba($white, 0.8);
+            box-shadow: 0px 40px 200px rgba($siteColor, 0.07), 0px 8px 44px rgba($siteColor, 0.04),
+                0px 2px 14px rgba($siteColor, 0.03);
+            border-radius: 16px 16px 0px 0px;
+            padding: 30px 40px 24px 80px;
+        }
+        .bottom_title {
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding-bottom: 12px;
+        }
+        .payment_list {
+            @extend %standardList;
+            padding-top: 18px;
+            li {
+                margin-bottom: 16px;
+                &:last-child {
+                    padding-top: 24px;
+                    margin-top: 8px;
+                    border-top: 1px solid $footerBorder;
+                }
+            }
+        }
+        .radio_check {
+            display: block;
+            width: 22px;
+            min-width: 22px;
+            height: 22px;
+            background: transparent;
+            border: 1px solid $gray99;
+            box-sizing: border-box;
+            border-radius: 50%;
+            margin-right: 28px;
+            position: relative;
+            @extend %back300;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: -5px 0 0 -5px;
+                width: 10px;
+                min-width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: transparent;
+                @extend %back300;
+            }
+        }
+        .user_id {
+            font-size: 160%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding-left: 28px;
+            white-space: nowrap;
+        }
+        .user_name {
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding-left: 32px;
+        }
+        .new_card {
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray4D;
+        }
+        input {
+            @extend %maskedInput;
+            &:checked {
+                + .radio_button {
+                    border: 1px solid rgba($siteColor, 0.5);
+                    .radio_check {
+                        background: $siteColor;
+                        border: 1px solid $siteColor;
+                        &:before {
+                            background: $white;
+                        }
+                    }
+                }
+                + .checkbox_button {
+                    &:before {
+                        background: $siteColor;
+                    }
+                }
+            }
+        }
+        img {
+            max-width: 64px;
+        }
+        .radio_button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 25px;
+            border-radius: 16px;
+            border: 1px solid $footerBorder;
+            cursor: pointer;
+            min-height: 72px;
+            @include lightButtonHover();
+        }
+        .checkbox_button {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            line-height: 1.25em;
+            color: $gray66;
+            @include opacityHover();
+            @extend %all300;
+            &:before {
+                color: $white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 22px;
+                min-width: 22px;
+                height: 22px;
+                margin-right: 12px;
+                border-radius: 4px;
+                border: 1px solid $gray99;
+                font-size: 66.7%;
+            }
+        }
+        .save_card {
+            display: flex;
+            justify-content: flex-end;
+            font-size: 14px;
+        }
+        .total_sum {
+            font-family: $bold;
+            font-size: 320%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding-right: 15px;
+        }
+        .price_row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a {
+                display: block;
+                font-size: 160%;
+                line-height: 20px;
+                padding: 17px;
+                border-radius: 8px;
+                color: $white;
+                background: $siteColor;
+                text-align: center;
+                min-width: 260px;
+                @include siteBgAlfaHover();
+            }
+        }
+        .automatic_payment {
+            padding-top: 90px;
+            a {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 140%;
+                line-height: 1.5em;
+                color: $black33;
+                padding: 20px 25px;
+                border: 1px solid $footerBorder;
+                box-sizing: border-box;
+                border-radius: 16px;
+                &:before {
+                    color: rgba($black33, 0.3);
+                }
+                @include lightButtonHover();
+            }
+            span {
+                display: flex;
+                align-items: center;
+                padding-right: 10px;
+                &:before {
+                    display: block;
+                    margin-right: 10px;
+                    color: $gray4D;
+                    font-size: 130%;
+                }
+            }
+        }
+        .attached_cards {
+            font-size: 160%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding-top: 24px;
+        }
+        @include mediaTo($size1200) {
+            .bottom_block {
+                padding: 30px 30px 24px 50px;
+            }
+            .total_sum {
+                font-size: 280%;
+            }
+            .service_top {
+                padding: 30px;
+            }
+            .user_id {
+                font-size: 140%;
+                padding-left: 20px;
+            }
+            .user_name {
+                padding-left: 20px;
+            }
+            .radio_check {
+                margin-right: 20px;
+            }
+            .radio_button {
+                padding: 10px 18px;
+            }
+            .automatic_payment {
+                padding-top: 70px;
+                a {
+                    padding: 20px 18px;
+                }
+            }
+        }
+        @include mediaTo($size960) {
+            .bottom_block {
+                padding: 30px 30px 24px;
+            }
+            .total_sum {
+                font-size: 240%;
+            }
+            .service_top {
+                padding: 30px 20px;
+            }
+            .price_row a {
+                font-size: 140%;
+                padding: 15px;
+                min-width: 210px;
+            }
+            .user_id {
+                font-size: 130%;
+                padding-left: 12px;
+            }
+            .user_name {
+                font-size: 130%;
+            }
+            .radio_check {
+                margin-right: 12px;
+            }
+            .radio_button {
+                padding: 10px 12px;
+            }
+            img {
+                max-width: 50px;
+            }
+            .automatic_payment {
+                padding-top: 50px;
+                a {
+                    font-size: 130%;
+                    padding: 20px 12px;
+                }
+            }
+            .total_sum {
+                font-size: 220%;
+            }
+        }
+        @include mediaTo($size768) {
+            .user_id {
+                font-size: 140%;
+                padding-left: 20px;
+            }
+            .user_name {
+                padding-left: 20px;
+                font-size: 140%;
+            }
+            .radio_check {
+                margin-right: 20px;
+            }
+            .radio_button {
+                padding: 10px 18px;
+            }
+            img {
+                max-width: 64px;
+            }
+            .automatic_payment {
+                padding-top: 40px;
+                a {
+                    padding: 20px 18px;
+                }
+            }
+        }
+        @include mediaTo($size576) {
+            .user_id {
+                font-size: 130%;
+                padding-left: 12px;
+            }
+            .user_name {
+                font-size: 130%;
+            }
+            .radio_check {
+                margin-right: 12px;
+            }
+            .radio_button {
+                padding: 10px 12px;
+            }
+            img {
+                max-width: 50px;
+            }
+            .automatic_payment {
+                padding-top: 50px;
+                a {
+                    font-size: 130%;
+                    padding: 20px 12px;
+                }
+            }
+        }
+        @include mediaTo($size525) {
+            .service_top {
+                padding: 24px 20px;
+            }
+            .bottom_block {
+                padding: 24px 20px;
+            }
+        }
+        @include mediaTo($size480) {
+            .price_row {
+                flex-direction: column;
+                align-items: flex-start;
+                a {
+                    width: 100%;
+                    margin-top: 12px;
+                }
+            }
+            .total_sum {
+                font-size: 280%;
+            }
+            .radio_button {
+                flex-wrap: wrap;
+            }
+            .user_name {
+                width: 100%;
+                padding-top: 10px;
+                font-size: 140%;
+                padding-left: 34px;
+            }
+            .user_id {
+                font-size: 140%;
+                padding-left: 20px;
+            }
+            .automatic_payment {
+                padding-top: 30px;
+                a {
+                    font-size: 140%;
+                    padding: 20px 12px;
+                }
+            }
+            .attached_cards {
+                font-size: 140%;
+                padding-top: 18px;
+            }
+            .radio_check {
+                width: 18px;
+                min-width: 18px;
+                height: 18px;
+                margin-right: 8px;
+                &:before {
+                    margin: -4px 0 0 -4px;
+                    width: 8px;
+                    min-width: 8px;
+                    height: 8px;
+                }
+            }
+            .checkbox_button {
+                font-size: 130%;
+                &:before {
+                    width: 18px;
+                    min-width: 18px;
+                    height: 18px;
+                    margin-right: 8px;
+                    font-size: 50%;
+                }
+            }
+        }
+        @include mediaTo($size400) {
+            .service_top {
+                padding: 24px 15px;
+            }
+            .bottom_block {
+                padding: 24px 15px;
+            }
+            .total_sum {
+                font-size: 240%;
+            }
+            .user_name {
+                font-size: 130%;
+                padding-left: 30px;
+            }
+            .user_id {
+                font-size: 130%;
+                padding-left: 12px;
+            }
+            .automatic_payment {
+                a {
+                    font-size: 130%;
+                }
+            }
+        }
+    }
+}
+
+@import "../../assets/sass/imports/main/extendsEnd";

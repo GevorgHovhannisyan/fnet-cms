@@ -1,0 +1,41 @@
+image: studioone/node:latest
+
+stages:
+  - check
+  - build
+  - deployment
+cache:
+  paths:
+    - node_modules/
+check:
+  stage: check
+  script:
+    - export
+build:
+  stage: build
+  only:
+   - development
+  image: node:12.16.3-alpine3.11
+  before_script:
+    - echo "NODE_ENV=production" > .env
+    - echo "VUE_APP_BASE_URL=https://cabinet.fnet.am" >> .env  
+    - echo "VUE_APP_API_URL=https://fnet.am/api/v1" >> .env
+    - echo "VUE_APP_IMG_URL=https://fnet.am/" >> .env
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+    - dist
+deploy:
+  stage: deployment
+  only:
+    - development
+  before_script:  
+    - apk add --update openssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:  
+    - rsync -avzuh -e "ssh -p 2324 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress ${CI_PROJECT_DIR}/dist/* fnet@91.109.25.52:/home/fnet/fnet-dashboard/dist

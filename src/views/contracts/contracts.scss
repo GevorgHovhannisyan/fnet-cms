@@ -1,0 +1,353 @@
+@import "../../assets/sass/imports/main/variables";
+@import "../../assets/sass/imports/main/mixins";
+@import "../../assets/sass/imports/main/extendsStart";
+@import "../../assets/sass/imports/personal/personalGeneral";
+body.popup_opened {
+    overflow: hidden;
+    .add_contract_popup {
+        top: 0;
+    }
+}
+.contracts_page {
+    .add_contract_popup {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        z-index: 2000;
+        background: rgba($gray99, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include animStyle(top 0.5s);
+    }
+    .change_inner {
+        background: $white;
+        border: 1px solid $footerBorder;
+        box-sizing: border-box;
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        padding: 52px 40px 32px;
+        position: relative;
+        width: 600px;
+        max-width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @include customScroll(3px, auto, 3px, 20px, 20px, rgba($siteColor, 0.1), $siteColor);
+        .close_btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            color: $gray99;
+            border: none;
+            background: transparent;
+            font-size: 160%;
+            @include siteColorAlfaHover();
+        }
+        .buttons_row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-top: 12px;
+            button {
+                font-size: 160%;
+                line-height: 20px;
+                text-align: center;
+                border: none;
+            }
+            .cancel_btn {
+                color: $siteColor;
+                background: transparent;
+                margin-right: 48px;
+                @include siteColorAlfaHover();
+            }
+            .change_btn {
+                background: $siteColor;
+                border-radius: 8px;
+                padding: 17px;
+                min-width: 203px;
+                color: $white;
+                @include siteBgAlfaHover();
+            }
+        }
+        .change_title {
+            padding-bottom: 20px;
+            font-size: 240%;
+            line-height: 1.42em;
+            color: $gray4D;
+            span {
+                color: $siteColor;
+                display: inline-block;
+            }
+        }
+        .success_title {
+            color: $successColor;
+            text-align: center;
+            padding-bottom: 0;
+        }
+        .main_icon {
+            display: block;
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            font-size: 240%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid $successColor;
+            color: $successColor;
+            border-radius: 16px;
+            margin: 0 auto 21px;
+        }
+        .field_block {
+            padding-top: 20px;
+        }
+        .field_title {
+            font-size: 140%;
+            line-height: 1.25em;
+            padding-bottom: 8px;
+            color: $gray4D;
+        }
+        input {
+            background: $white;
+            border: 1px solid $footerBorder;
+            border-radius: 8px;
+            font-size: 140%;
+            line-height: 18px;
+            padding: 13px 16px;
+            color: $gray99;
+        }
+        .change_description {
+            font-size: 140%;
+            line-height: 1.42em;
+            color: $gray4D;
+            padding-bottom: 12px;
+        }
+        .active_btn {
+            font-size: 160%;
+            line-height: 20px;
+            text-align: center;
+            margin: 32px 0 0 auto;
+            min-width: 268px;
+            border: none;
+            background: $siteColor;
+            border-radius: 8px;
+            padding: 17px;
+            color: $white;
+            @include siteBgAlfaHover();
+        }
+    }
+    .add_contracts {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $siteColor;
+        span {
+            display: flex;
+            margin-left: 8px;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            font-size: 80%;
+            min-width: 26px;
+            background: $siteColor;
+            box-shadow: 0px 3.71429px 20.4286px rgba($siteColor, 0.04), 0px 0.928571px 6.5px rgba($siteColor, 0.03);
+            border-radius: 50%;
+            color: $white;
+        }
+    }
+    .contracts_list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 -12px;
+        display: flex;
+        flex-wrap: wrap;
+        > li {
+            max-width: 50%;
+            flex: 0 0 50%;
+            padding: 24px 12px 0;
+        }
+    }
+    .item_inner {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @extend %color300;
+        &:hover {
+            background: $white;
+            cursor: pointer;
+            .contract_remove {
+                opacity: 1;
+            }
+        }
+    }
+    .contract_status {
+        display: block;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray66;
+        &:before {
+            font-size: 140%;
+            display: block;
+        }
+        &.main_cotract {
+            display: flex;
+            align-items: center;
+            &:before {
+                font-size: 140%;
+                margin-right: 10px;
+                color: $yellow;
+            }
+        }
+    }
+    .contract_remove {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        background: $white;
+        border-radius: 16px;
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 5;
+        opacity: 0;
+        font-size: 150%;
+        color: $gray4D;
+        @include opacityHover();
+    }
+    .item_top {
+        padding: 42px 40px 25px;
+        border-radius: 16px 16px 0 0;
+        flex: 1;
+        height: 40%;
+    }
+    .item_bottom {
+        border-top: 1px solid $footerBorder;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            font-size: 140%;
+            line-height: 1.25em;
+            color: $gray4D;
+            padding: 22px 40px;
+            background: $white;
+            border-radius: 0 0 16px 16px;
+            @include lightButtonHover();
+            &:hover {
+                span {
+                    text-decoration: underline;
+                    color: $siteColor;
+                }
+            }
+            span {
+                display: block;
+                @extend %all300;
+            }
+            &:before {
+                display: block;
+                margin-left: 10px;
+                font-size: 120%;
+                color: $siteColor;
+            }
+        }
+    }
+    .service_title {
+        padding: 19px 0 4px;
+    }
+    .contract_info {
+        padding-top: 20px;
+        font-size: 140%;
+        line-height: 1.25em;
+        span {
+            display: block;
+            color: $gray66;
+        }
+        div {
+            font-family: $medium;
+            color: $gray4D;
+            padding-top: 8px;
+        }
+    }
+}
+@include mediaTo($size1200) {
+    .contracts_page {
+        .item_top {
+            padding: 40px 20px 20px;
+        }
+        .item_bottom a {
+            padding: 20px;
+        }
+    }
+}
+@include mediaTo($size960) {
+    .contracts_page {
+        .item_top {
+            padding: 40px 40px 20px;
+        }
+        .item_bottom a {
+            padding: 20px 40px;
+        }
+        .contracts_list {
+            margin: 0;
+            > li {
+                max-width: 100%;
+                flex: 0 0 100%;
+                padding: 24px 0 0;
+            }
+        }
+    }
+}
+@include mediaTo($size768) {
+    .contracts_page {
+        .item_top {
+            padding: 40px 20px 20px;
+        }
+        .item_bottom a {
+            padding: 20px;
+        }
+        .contracts_list {
+            margin: 0 -12px;
+            > li {
+                max-width: 50%;
+                flex: 0 0 50%;
+                padding: 24px 12px 0;
+            }
+        }
+    }
+}
+@include mediaTo($size640) {
+    .contracts_page {
+        .item_top {
+            padding: 40px 20px 20px;
+        }
+        .item_bottom a {
+            padding: 20px;
+        }
+        .contracts_list {
+            margin: 0;
+            > li {
+                max-width: 100%;
+                flex: 0 0 100%;
+                padding: 24px 0 0;
+            }
+        }
+    }
+}
+
+@import "../../assets/sass/imports/main/extendsEnd";

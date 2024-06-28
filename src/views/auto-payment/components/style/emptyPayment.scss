@@ -1,0 +1,125 @@
+@import "../../../assets/sass/imports/main/variables";
+@import "../../../assets/sass/imports/main/mixins";
+@import "../../../assets/sass/imports/main/extendsStart";
+@import "../../../assets/sass/imports/personal/personalGeneral";
+
+.icon_unio.selected{
+    color: $siteColor;
+}
+.empty_page{
+    max-width: 608px;
+    margin: 0 auto;
+    background: $white;
+    box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 82px 38px 64px;
+    .main_icon{
+        font-size: 650%;
+        line-height: 1.25em;
+        color: $siteColor;
+        margin-bottom: 22px;
+    }
+    .empty_title{
+        font-size: 240%;
+        line-height: 1.25em;
+        text-align: center;
+        color: $gray4D;
+        font-family: $bold;
+        padding-bottom: 22px;
+    }
+    .empty_description{
+        font-size: 140%;
+        line-height: 1.25em;
+        text-align: center;
+        color: $gray4D;
+        padding-bottom: 24px;
+    }
+    .auto_payment{
+        display: flex;
+        align-items: center;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $siteColor;
+        @include siteColorAlfaHover();
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 16px;
+            width: 44px;
+            height: 44px;
+            font-size: 120%;
+            min-width: 44px;
+            background: $siteColor;
+            box-shadow: 0px 3.71429px 20.4286px rgba($siteColor, 0.04), 0px 0.928571px 6.5px rgba($siteColor, 0.03);
+            border-radius: 50%;
+            color: $white;
+        }
+    }
+    @include mediaTo($size1200){
+        padding: 60px 35px;
+    }
+    @include mediaTo($size960){
+        padding: 50px 30px;
+        max-width: 100%;
+        .main_icon{
+            font-size: 550%;
+        }
+        .empty_title{
+            font-size: 200%;
+        }
+    }
+    @include mediaTo($size768){
+        padding: 50px 30px;
+        max-width: 100%;
+        .main_icon{
+            font-size: 650%;
+        }
+        .empty_title{
+            font-size: 240%;
+        }
+    }
+    @include mediaTo($size525){
+        padding: 50px 30px;
+        max-width: 100%;
+        .main_icon{
+            font-size: 500%;
+            margin-bottom: 18px;
+        }
+        .empty_title{
+            font-size: 200%;
+            padding-bottom: 18px;
+        }
+        .empty_description{
+            padding-bottom: 18px;
+        }
+    }
+    @include mediaTo($size480){
+        padding: 40px 30px;
+        .auto_payment span {
+            width: 36px;
+            height: 36px;
+            font-size: 100%;
+            min-width: 36px;
+            margin-left: 12px;
+        }
+    }
+    @include mediaTo($size400){
+        padding: 40px 20px;
+        .empty_title{
+            font-size: 180%;
+        }
+        .auto_payment span {
+            width: 24px;
+            height: 24px;
+            font-size: 80%;
+            min-width: 24px;
+            margin-left: 8px;
+        }
+    }
+}
+
+@import "../../../assets/sass/imports/main/extendsEnd";

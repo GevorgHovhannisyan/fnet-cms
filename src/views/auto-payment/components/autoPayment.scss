@@ -1,0 +1,569 @@
+@import "../../../assets/sass/imports/main/variables";
+@import "../../../assets/sass/imports/main/mixins";
+@import "../../../assets/sass/imports/main/extendsStart";
+@import "../../../assets/sass/imports/personal/personalGeneral";
+
+.edit_page {
+    .edit_inner {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+    }
+    .title_row {
+        padding-bottom: 24px;
+    }
+    .service_title {
+        display: flex;
+        align-items: center;
+        @include siteColorAlfaHover();
+        &:before {
+            display: block;
+            margin-right: 16px;
+            font-size: 75%;
+            @extend %verticalRotate;
+        }
+    }
+    .service_top {
+        padding: 32px 40px 12px;
+        border-bottom: 1px solid $footerBorder;
+        .service_title {
+            padding-bottom: 0;
+        }
+    }
+    .service_middle {
+        padding: 32px 40px 0;
+        img {
+            max-width: 64px;
+        }
+    }
+    .bottom_block {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 40px 200px rgba($siteColor, 0.07), 0px 8px 44px rgba($siteColor, 0.04),
+            0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px 16px 0px 0px;
+        padding: 30px 40px 24px 80px;
+        margin-top: 24px;
+    }
+    .bottom_title {
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-bottom: 12px;
+    }
+    .edit_pay_section_title {
+        font-size: 160%;
+        line-height: 1.25em;
+        color: $gray4D;
+        font-family: $regular;
+    }
+    .payment_list {
+        @extend %standardList;
+        padding-top: 24px;
+        li {
+            padding-bottom: 20px;
+        }
+    }
+    .item_inner {
+        box-sizing: border-box;
+        background: $white;
+        border: 1px solid $footerBorder;
+        border-radius: 16px;
+        padding: 32px 28px 24px 28px;
+        border-radius: 16px;
+        &:hover {
+            border: 1px solid $hoverBorder;
+        }
+    }
+    .service_type {
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray66;
+        padding: 16px 0 0 34px;
+    }
+    input {
+        @extend %maskedInput;
+        &:checked {
+            + .checkbox_button {
+                &:before {
+                    background: $siteColor;
+                    font-size: 66.7%;
+                }
+                .inner_title {
+                    color: $gray4D;
+                }
+                .service_id {
+                    color: $gray4D;
+                }
+                .service_price {
+                    color: $siteColor;
+                }
+            }
+            + .radio_button {
+                border: 1px solid rgba($siteColor, 0.5);
+                .radio_check {
+                    background: $siteColor;
+                    border: 1px solid $siteColor;
+                    &:before {
+                        background: $white;
+                    }
+                }
+            }
+        }
+    }
+    .checkbox_button {
+        display: flex;
+        align-items: flex-start;
+        cursor: pointer;
+        @include opacityHover();
+        @extend %all300;
+        &:before {
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            font-size: 62.5%;
+            min-width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            border: 1px solid $gray99;
+            font-size: 0;
+        }
+    }
+    .checkbox_inner {
+        display: flex;
+        align-items: flex-start;
+        flex: 1;
+        width: 80%;
+        > span {
+            padding: 0 12px;
+            display: block;
+        }
+    }
+    .price_row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            display: block;
+            font-size: 160%;
+            line-height: 20px;
+            padding: 17px;
+            border-radius: 8px;
+            color: $white;
+            background: $siteColor;
+            text-align: center;
+            min-width: 260px;
+            @include siteBgAlfaHover();
+        }
+    }
+    .total_sum {
+        font-family: $bold;
+        font-size: 320%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-right: 15px;
+    }
+    .inner_title {
+        max-width: 62%;
+        flex: 0 0 62%;
+        color: $gray66;
+        font-size: 160%;
+        line-height: 1.25em;
+    }
+    .service_id {
+        max-width: 18%;
+        flex: 0 0 18%;
+        font-size: 120%;
+        line-height: 1.25em;
+        color: $gray66;
+        text-align: right;
+    }
+    .service_price {
+        max-width: 20%;
+        flex: 0 0 20%;
+        font-family: $bold;
+        font-size: 160%;
+        line-height: 1.25em;
+        color: $gray66;
+        text-align: right;
+    }
+    .remove_btn {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        padding: 13px 16px;
+        font-size: 140%;
+        line-height: 18px;
+        border: none;
+        display: flex;
+        align-items: center;
+        color: $offColor;
+        @include lightButtonHover();
+        &:before {
+            display: inline-block;
+            margin-right: 12px;
+        }
+    }
+    .autopayment_date {
+        padding: 40px 40px 32px;
+        border-bottom: 1px solid $footerBorder;
+        display: flex;
+        align-items: center;
+        > span {
+            display: block;
+            padding-right: 20px;
+            font-size: 160%;
+            line-height: 1.25em;
+            color: $gray4D;
+        }
+
+        .v-select {
+            width: 70px !important;
+            .vs__dropdown-toggle {
+                width: 70px !important;
+                min-width: 70px;
+            }
+        }
+    }
+    .add_payment {
+        display: flex;
+        align-items: center;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $siteColor;
+        @include siteColorAlfaHover();
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 16px;
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: $siteColor;
+            box-shadow: 0px 3.71429px 20.4286px rgba($siteColor, 0.04), 0px 0.928571px 6.5px rgba($siteColor, 0.03);
+            border-radius: 50%;
+            color: $white;
+        }
+    }
+    .radio_list {
+        @extend %standardList;
+        li {
+            padding-bottom: 16px;
+        }
+    }
+    .radio_button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 25px;
+        border-radius: 16px;
+        border: 1px solid $footerBorder;
+        cursor: pointer;
+        min-height: 72px;
+        @include lightButtonHover();
+    }
+    .radio_check {
+        display: block;
+        width: 22px;
+        min-width: 22px;
+        height: 22px;
+        background: transparent;
+        border: 1px solid $gray99;
+        box-sizing: border-box;
+        border-radius: 50%;
+        margin-right: 28px;
+        position: relative;
+        @extend %back300;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -5px 0 0 -5px;
+            width: 10px;
+            min-width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: transparent;
+            @extend %back300;
+        }
+    }
+    .user_id {
+        font-size: 160%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-left: 28px;
+        white-space: nowrap;
+    }
+    .user_name {
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-left: 32px;
+    }
+    @include mediaTo($size1200) {
+        .item_inner {
+            padding: 32px 18px 24px;
+        }
+        .service_id {
+            max-width: 22%;
+            flex: 0 0 22%;
+        }
+        .inner_title {
+            max-width: 58%;
+            flex: 0 0 58%;
+            font-size: 140%;
+        }
+        .service_price {
+            font-size: 140%;
+        }
+        .checkbox_inner > span {
+            padding: 0 10px;
+        }
+        .bottom_block {
+            padding: 30px 30px 24px 50px;
+        }
+        .total_sum {
+            font-size: 280%;
+        }
+        .service_top {
+            padding: 30px 30px 10px;
+        }
+        .service_middle {
+            padding: 30px 30px 0;
+        }
+        .autopayment_date {
+            padding: 30px;
+        }
+        .radio_button {
+            padding: 10px 18px;
+        }
+    }
+    @include mediaTo($size960) {
+        .item_inner {
+            padding: 30px 12px 24px;
+        }
+        .service_id {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+        .inner_title {
+            max-width: 100%;
+            flex: 0 0 100%;
+            font-size: 160%;
+            padding: 0 10px 12px !important;
+        }
+        .service_price {
+            font-size: 140%;
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+        .checkbox_inner {
+            flex-wrap: wrap;
+        }
+        .checkbox_button:before {
+            margin: 0;
+        }
+        .service_id {
+            text-align: left;
+        }
+        .service_price {
+            text-align: left;
+            font-size: 160%;
+        }
+        .bottom_block {
+            padding: 30px 30px 24px;
+        }
+        .total_sum {
+            font-size: 240%;
+        }
+        .service_top {
+            padding: 30px 20px 10px;
+        }
+        .service_middle {
+            padding: 30px 20px 0;
+            img {
+                max-width: 50px;
+            }
+        }
+        .autopayment_date {
+            padding: 30px 20px 20px;
+        }
+        .bottom_block {
+            padding: 30px 20px 24px;
+        }
+        .user_id {
+            padding-left: 18px;
+            font-size: 130%;
+        }
+        .user_name {
+            padding-left: 18px;
+            font-size: 130%;
+        }
+        .price_row a {
+            font-size: 140%;
+            padding: 15px;
+            min-width: 210px;
+        }
+        .radio_button {
+            padding: 10px 12px;
+        }
+        .radio_check {
+            margin-right: 18px;
+        }
+    }
+    @include mediaTo($size768) {
+        .item_inner {
+            padding: 30px 18px 24px;
+        }
+        .service_top {
+            padding: 30px 30px 0;
+        }
+        .bottom_block {
+            padding: 30px 30px 24px;
+        }
+        .service_middle {
+            padding: 30px 30px 0;
+            img {
+                max-width: 64px;
+            }
+        }
+        .autopayment_date {
+            padding: 30px 30px 20px;
+        }
+        .user_id {
+            padding-left: 28px;
+            font-size: 140%;
+        }
+        .user_name {
+            padding-left: 28px;
+            font-size: 140%;
+        }
+        .radio_check {
+            margin-right: 28px;
+        }
+    }
+    @include mediaTo($size576) {
+        .radio_check {
+            margin-right: 18px;
+        }
+        .service_middle img {
+            max-width: 50px;
+        }
+        .user_name,
+        .user_id {
+            padding-left: 18px;
+            font-size: 130%;
+        }
+    }
+    @include mediaTo($size525) {
+        .service_top {
+            padding: 24px 20px 0;
+        }
+        .bottom_block {
+            padding: 24px 20px;
+        }
+        .autopayment_date {
+            padding: 24px 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            > span {
+                padding: 0 0 15px;
+                font-size: 140%;
+            }
+        }
+        .service_middle {
+            padding: 30px 20px 0;
+        }
+    }
+    @include mediaTo($size480) {
+        .item_inner {
+            padding: 24px 10px;
+        }
+        .inner_title {
+            font-size: 140%;
+        }
+        .price_row {
+            flex-direction: column;
+            align-items: flex-start;
+            a {
+                width: 100%;
+                margin-top: 12px;
+            }
+        }
+        .total_sum {
+            font-size: 280%;
+        }
+        .radio_button {
+            flex-wrap: wrap;
+        }
+        .user_name {
+            width: 100%;
+            padding: 10px 0 0 40px;
+            font-size: 140%;
+        }
+        .user_id {
+            font-size: 140%;
+        }
+    }
+    @include mediaTo($size400) {
+        .item_inner {
+            padding: 20px 5px 20px 15px;
+        }
+        .service_top {
+            padding: 24px 15px 0;
+        }
+        .bottom_block {
+            padding: 24px 15px;
+            margin-top: 12px;
+        }
+        .inner_title {
+            font-size: 140%;
+        }
+        .service_id {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        .service_price {
+            max-width: 100%;
+            flex: 0 0 100%;
+            padding-top: 8px !important;
+        }
+        .service_type {
+            font-size: 130%;
+            padding: 15px 0 0 28px;
+        }
+        .checkbox_button:before {
+            font-size: 50%;
+            width: 18px;
+            min-width: 18px;
+            height: 18px;
+        }
+        .total_sum {
+            font-size: 240%;
+        }
+        .radio_check {
+            width: 18px;
+            min-width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            &:before {
+                margin: -4px 0 0 -4px;
+                width: 8px;
+                min-width: 8px;
+                height: 8px;
+            }
+        }
+        .user_id,
+        .user_name {
+            font-size: 130%;
+        }
+        .service_middle {
+            padding: 24px 15px 0;
+        }
+    }
+}
+
+@import "../../../assets/sass/imports/main/extendsEnd";

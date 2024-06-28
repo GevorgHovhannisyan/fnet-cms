@@ -1,0 +1,208 @@
+@import "../../assets/sass/imports/main/variables";
+@import "../../assets/sass/imports/main/mixins";
+@import "../../assets/sass/imports/main/extendsStart";
+@import "../../assets/sass/imports/personal/personalGeneral";
+
+.auto_payment {
+    .add_payment {
+        display: flex;
+        align-items: center;
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $siteColor;
+        @include siteColorAlfaHover();
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 16px;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            font-size: 120%;
+            background: $siteColor;
+            box-shadow: 0px 3.71429px 20.4286px rgba($siteColor, 0.04), 0px 0.928571px 6.5px rgba($siteColor, 0.03);
+            border-radius: 50%;
+            color: $white;
+        }
+    }
+    ul {
+        @extend %standardList;
+        padding-top: 4px;
+    }
+    li {
+        padding-top: 20px;
+    }
+    .item_inner {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        padding: 32px 40px;
+        position: relative;
+        cursor: pointer;
+    }
+    .setting_buttons {
+        display: flex;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        button {
+            background: rgba($white, 0.8);
+            box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+            border-radius: 16px;
+            padding: 13px 16px;
+            font-size: 140%;
+            line-height: 18px;
+            border: none;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            @include lightButtonHover();
+            &:before {
+                display: inline-block;
+                margin-right: 12px;
+            }
+            &.remove_btn {
+                color: $offColor;
+                &:before {
+                    font-size: 120%;
+                }
+            }
+            &.edit_btn {
+                color: $siteColor;
+                margin-left: 12px;
+                &:before {
+                    font-size: 110%;
+                }
+            }
+        }
+    }
+    .user_address {
+        font-size: 160%;
+        line-height: 1.375em;
+        color: $gray4D;
+        padding-bottom: 16px;
+    }
+    .user_id {
+        font-size: 140%;
+        line-height: 1.25em;
+        color: $gray66;
+        span {
+            display: inline-block;
+            padding-left: 8px;
+            color: $gray4D;
+        }
+    }
+    @include mediaTo($size1200) {
+        .item_inner {
+            padding: 30px;
+        }
+    }
+    @include mediaTo($size960) {
+        .item_inner {
+            padding: 24px 20px;
+        }
+        .setting_buttons button {
+            opacity: 1;
+            font-size: 130%;
+            line-height: 16px;
+            padding: 10px;
+        }
+        .user_address {
+            font-size: 140%;
+        }
+        .user_id {
+            font-size: 130%;
+            span {
+                padding-left: 8px;
+            }
+        }
+    }
+    @include mediaTo($size768) {
+        .item_inner {
+            padding: 30px;
+        }
+        .setting_buttons button {
+            font-size: 140%;
+            line-height: 18px;
+            padding: 13px 16px;
+        }
+        .user_address {
+            font-size: 160%;
+        }
+        .user_id {
+            font-size: 140%;
+            span {
+                padding-left: 12px;
+            }
+        }
+    }
+    @include mediaTo($size576) {
+        .setting_buttons {
+            position: unset;
+            padding-top: 12px;
+        }
+        .add_payment span {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            font-size: 100%;
+        }
+    }
+    @include mediaTo($size480) {
+        .item_inner {
+            padding: 24px 20px;
+        }
+        .user_address {
+            font-size: 140%;
+        }
+        .user_id {
+            font-size: 130%;
+            span {
+                padding-left: 8px;
+            }
+        }
+        .setting_buttons {
+            button {
+                font-size: 130%;
+                line-height: 16px;
+                padding: 10px;
+            }
+        }
+    }
+    @include mediaTo($size400) {
+        .item_inner {
+            padding: 20px 12px;
+        }
+        .setting_buttons button:before {
+            margin-right: 8px;
+        }
+    }
+}
+.web {
+    .auto_payment .item_inner {
+        @extend %back300;
+        &:hover {
+            background: $white;
+            .setting_buttons button {
+                opacity: 1;
+            }
+        }
+    }
+}
+.touch {
+    .auto_payment .setting_buttons button {
+        opacity: 1;
+    }
+    .auto_payment .item_inner {
+        @extend %back150;
+        &:active {
+            background: $white;
+            .setting_buttons button {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@import "../../assets/sass/imports/main/extendsEnd";

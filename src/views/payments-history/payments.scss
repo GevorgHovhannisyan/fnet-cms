@@ -1,0 +1,210 @@
+@import "../../assets/sass/imports/main/variables";
+@import "../../assets/sass/imports/main/mixins";
+@import "../../assets/sass/imports/main/extendsStart";
+@import "../../assets/sass/imports/personal/personalGeneral";
+
+.payments_page {
+    .payment_history {
+        background: rgba($white, 0.8);
+        box-shadow: 0px 8px 44px rgba($siteColor, 0.04), 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        .select_block {
+            min-width: 230px;
+        }
+        .title_row {
+            padding: 45px 40px 20px;
+        }
+    }
+    .payments_list {
+        > ul {
+            @extend %standardList;
+            font-size: 120%;
+            line-height: 1.25em;
+            > li {
+                padding: 16px 40px;
+                position: relative;
+                &:first-child {
+                    border-bottom: 1px solid $footerBorder;
+                }
+                &:nth-child(2n) {
+                    background: $white;
+                }
+                &:last-child {
+                    border-bottom: 1px solid $footerBorder;
+                    padding: 24px 40px;
+                }
+            }
+        }
+        .paging {
+            a {
+                font-size: 117.5%;
+            }
+        }
+        .list_head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 -10px;
+            color: $gray66;
+            > div {
+                padding: 0 10px;
+            }
+        }
+        .payment_head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 -10px;
+            color: $gray4D;
+            > div {
+                padding: 0 10px;
+            }
+            .paid_block {
+                font-size: 117.5%;
+                font-family: $bold;
+                span {
+                    display: inline-block;
+                    padding: 7px;
+                    max-width: 100%;
+                    min-width: 79px;
+                    border-radius: 8px;
+                    text-align: center;
+                    color: $onColor;
+                    background: rgba($onColor, 0.15);
+                }
+            }
+            .balance_block {
+                font-size: 117.5%;
+                font-family: $bold;
+            }
+        }
+        .date_block {
+            max-width: 10%;
+            flex: 0 0 10%;
+        }
+        .service_block {
+            max-width: 48%;
+            flex: 0 0 48%;
+        }
+        .contract_block {
+            max-width: 18%;
+            flex: 0 0 18%;
+        }
+        .paid_block {
+            max-width: 12%;
+            flex: 0 0 12%;
+            text-align: right;
+        }
+        .balance_block {
+            max-width: 12%;
+            flex: 0 0 12%;
+            text-align: right;
+        }
+        .service_name {
+            font-size: 117.5%;
+            padding-bottom: 12px;
+        }
+    }
+    @include mediaTo($size1200) {
+        .payment_history {
+            .title_row {
+                padding: 40px 22px 20px;
+            }
+        }
+        .payments_list {
+            > ul > li {
+                padding: 16px 22px;
+                &:last-child {
+                    padding: 16px 22px;
+                }
+            }
+            .date_block {
+                max-width: 14%;
+                flex: 0 0 14%;
+            }
+            .service_block {
+                max-width: 40%;
+                flex: 0 0 40%;
+            }
+            .paid_block {
+                max-width: 14%;
+                flex: 0 0 14%;
+            }
+            .balance_block {
+                max-width: 14%;
+                flex: 0 0 14%;
+            }
+        }
+    }
+    @include mediaTo($size960) {
+        .payment_history {
+            .title_row {
+                padding: 40px 22px 20px;
+            }
+        }
+        .payments_list {
+            > ul > li {
+                padding: 16px 22px;
+                border-bottom: 1px solid $footerBorder;
+                &:last-child {
+                    padding: 16px 22px;
+                    border-bottom: none;
+                }
+                &:first-child {
+                    display: none;
+                }
+            }
+            .block_inner {
+                text-align: right;
+            }
+            .payment_head {
+                display: block;
+                margin: 0;
+                > div {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    max-width: 100%;
+                    flex: none;
+                    padding: 10px 0;
+                    &:before {
+                        display: block;
+                        content: attr(data-mobile);
+                        color: $gray99;
+                        margin-right: 10px;
+                    }
+                }
+                .paid_block,
+                .balance_block {
+                    &::before {
+                        font-size: 85.7%;
+                        font-family: $regular;
+                    }
+                }
+            }
+        }
+    }
+    @include mediaTo($size480) {
+        .payment_history {
+            .title_row {
+                padding: 40px 16px 20px;
+            }
+        }
+        .payments_list {
+            > ul > li {
+                padding: 16px;
+                border-bottom: 1px solid $footerBorder;
+                &:last-child {
+                    padding: 16px;
+                    border-bottom: none;
+                }
+            }
+            .service_name {
+                font-size: 108.5%;
+                padding-bottom: 8px;
+            }
+        }
+    }
+}
+
+@import "../../assets/sass/imports/main/extendsEnd";

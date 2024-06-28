@@ -1,0 +1,44 @@
+.main_page {
+    .my_serivces {
+        .v-skeleton-loader__button {
+            margin-top: 10px;
+            margin-left: auto;
+        }
+    }
+
+    .fcoin_block {
+        .v-skeleton-loader__image {
+            height: 120px;
+        }
+        .v-skeleton-loader__actions {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 0;
+            padding-right: 0;
+            .v-skeleton-loader__button {
+                height: 70px;
+                width: 120px;
+            }
+        }
+        .v-skeleton-loader__heading {
+            margin-bottom: 15px;
+        }
+    }
+    .profile_services {
+        .v-skeleton-loader__image {
+            height: 80px;
+        }
+    }
+}
+
+.service_page {
+    .v-skeleton-loader__image {
+        height: 120px;
+    }
+
+    .v-skeleton-loader__button {
+        margin-top: 10px;
+        margin-bottom: 15px;
+        margin-left: auto;
+    }
+}

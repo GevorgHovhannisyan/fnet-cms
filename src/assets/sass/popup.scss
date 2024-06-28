@@ -1,0 +1,98 @@
+@import "./imports/main/variables";
+@import "./imports/main/mixins";
+
+body.service_activate {
+    overflow: hidden;
+    .change_service {
+      top: 0;
+    }
+  }
+.change_service, .delete_image {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    z-index: 2000;
+    background: rgba($gray99, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -o-transition: top 0.5s;
+    -ms-transition: top 0.5s;
+    -moz-transition: top 0.5s;
+    -webkit-transition: top 0.5s;
+    transition: top 0.5s;
+    @include animStyle(top 0.5s);
+  
+    .change_inner {
+      background: $white;
+      border: 1px solid $footerBorder;
+      box-sizing: border-box;
+      box-shadow: 0px 8px 44px rgba($siteColor, 0.04),
+        0px 2px 14px rgba($siteColor, 0.03);
+      border-radius: 16px;
+      padding: 52px 40px 32px;
+      position: relative;
+      max-width: 600px;
+      .close_btn {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        color: $gray99;
+        border: none;
+        background: transparent;
+        font-size: 160%;
+        line-height: unset;
+        padding: unset;
+        min-width: unset;
+        margin: unset;
+        @include siteColorAlfaHover();
+      }
+      .change_title {
+        padding-bottom: 20px;
+      }
+      .change_description {
+        font-size: 140%;
+        line-height: 1.42em;
+        color: $gray4D;
+        padding-bottom: 32px;
+      }
+      .buttons_row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: unset;
+        padding-top: unset;
+        .popup_btn {
+          font-size: 160%;
+          line-height: 20px;
+          text-align: center;
+          border: none;
+        }
+      }
+      .cancel_btn {
+        color: $siteColor;
+        background: transparent;
+        margin-right: 48px;
+        padding: unset;
+        min-width: unset;
+        margin-left: unset;
+        margin-top: unset;
+        color: rgba(76, 23, 208, 0.7);
+        @include siteColorAlfaHover();
+      }
+      .active_btn {
+        background: $siteColor;
+        border-radius: 8px;
+        padding: 17px;
+        min-width: 208px;
+        color: $white;
+        margin: 0;
+        @include siteBgAlfaHover();
+      }
+    }
+  }
+
+@import "./imports/main/extendsEnd";

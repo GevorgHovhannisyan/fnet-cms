@@ -1,0 +1,189 @@
+.content{
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 16.7vw;
+        left: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        background-image: url('../images/payment.svg');
+    }
+}
+.payment_inner{
+    padding: 48px 0 114px;
+    .page_title{
+        text-align: center;
+    }
+    .form_block{
+        background: $white;
+        border: 1px solid $footerBorder;
+        box-sizing: border-box;
+        box-shadow: 0px 2px 14px rgba($siteColor, 0.03);
+        border-radius: 16px;
+        max-width: 450px;
+        margin: 48px auto 0;
+        padding: 48px 40px 32px;
+    }
+    .payment_id{
+        font-family: $bold;
+        font-size: 240%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-bottom: 12px;
+    }
+    .form_title{
+        font-size: 160%;
+        line-height: 1.25em;
+        color: $gray4D;
+        padding-bottom: 32px;
+    }
+    .field_row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        margin: 0 -8px;
+        font-size: 140%;
+        line-height: 20px;
+        span{
+            display: block;
+            padding: 0 8px;
+            color: $gray66;
+            &:last-child{
+                color: $gray4D;
+                text-align: right;
+            }
+        }
+        &.main_row{
+            padding-top: 36px;
+            span{
+                color: $siteColor;
+                &:last-child{
+                    font-family: $bold;
+                    font-size: 171.5%;
+                    line-height: 1.25em;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }  
+    .next_page{
+        display: block;
+        border-radius: 8px;
+        background: $siteColor;
+        color: $white;
+        font-size: 160%;
+        line-height: 19px;
+        text-align: center;
+        padding: 18px;
+        margin-top: 38px;
+        width: 100%;
+        @include buttonHover();
+    }
+    .bottom_block{
+        margin-top: 24px;
+        padding-top: 24px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -40px;
+            right: -40px;
+            height: 1px;
+            background: $footerBorder;
+        }
+        a{
+            display: inline-block;
+            font-size: 140%;
+            line-height: 1.25em;
+            text-align: center;
+            text-decoration-line: underline;
+            color: $siteColor;
+            @include siteColorAlfaHover();
+        }
+    }
+}
+@include mediaTo($size1200){
+    .payment_inner{
+        padding: 40px 0 100px;
+        .form_block{
+            margin-top: 40px;
+        }
+    }
+}
+@include mediaTo($size960){
+    .payment_inner{
+        padding: 40px 0 80px;
+        .form_block{
+            margin-top: 30px;
+        }
+    } 
+}
+@include mediaTo($size480){
+    .payment_inner{
+        padding: 30px 0 60px;
+        .form_block{
+            padding: 30px 20px;
+            max-width: 100%;
+        }
+        .payment_id{
+            font-size: 220%;
+        }
+        .bottom_block{
+            &:before{
+                left: -20px;
+                right: -20px;
+            }
+        }
+        .form_title{
+            padding-bottom: 16px;
+        }
+        .field_row.main_row{
+            padding-top: 24px;
+        }
+        .next_page{
+            margin-top: 24px;
+        }
+    }
+}
+@include mediaTo($size400){
+    .payment_inner{
+        padding: 30px 0 50px;
+        .form_block{
+            padding: 20px 12px;
+        }
+        .payment_id{
+            font-size: 200%;
+        }
+        .bottom_block{
+            &:before{
+                left: -12px;
+                right: -12px;
+            }
+        }
+        .next_page{
+            font-size: 140%;
+            line-height: 18px;
+            padding: 14px;
+        }
+        .field_row{
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0;
+            span{
+                padding: 0;
+                &:last-child{
+                    padding-top: 5px;
+                }
+            }
+        }
+    }
+}
